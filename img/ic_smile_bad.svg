@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+    <g data-name="그룹 592" transform="translate(.5 .5)">
+        <circle data-name="타원 1" cx="18" cy="18" r="18" style="stroke-miterlimit:10;fill:#f63;stroke:#151515"/>
+        <path data-name="패스 179" d="M7.134 0c0 1.574-1.6 2.85-3.567 2.85S0 1.574 0 0" transform="rotate(180 10.784 14.078)" style="fill:none;stroke:#fff;stroke-miterlimit:10"/>
+        <path data-name="선 285" transform="translate(12.243 16.632)" style="fill:none;stroke:#fff;stroke-miterlimit:10" d="M0 0v1.691"/>
+        <path data-name="선 286" transform="translate(23.757 16.632)" style="fill:none;stroke:#fff;stroke-miterlimit:10" d="M0 0v1.691"/>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "name": "longlabel-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnunun08/longlabel.git"
+  },
+  "author": "eboke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nnunun08/longlabel/issues"
+  },
+  "homepage": "https://github.com/nnunun08/longlabel#readme"
+}

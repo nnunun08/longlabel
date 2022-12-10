@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="headerWrap">
+        <div class="header">
+            <div class="inner">
+                <div class="logo">
+                    <img src="./img/logo.svg" alt="logo">
+                </div>
+                <ul>
+                    <li>Pick</li>
+                    <li>Archive</li>
+                    <li>Talks</li>
+                    <li>Stories</li>
+                    <li>About</li>
+                </ul>
+                <div class="rightBtn">
+                    <span>Connects</span>
+                    <div class="user">
+                        <span>로그인</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerBack"></div>
+    </div>
+
+    <div class="mainBanner">
+        <div class="slide ac" style="background-color: #e07a5f;">
+            <div class="img" style="background-image: url(./img/resource/banner01.png);"></div>
+            <span class="slide-num">1</span>
+        </div>
+        <div class="slide" style="background-color: #81b29a;">
+            <div class="img" style="background-image: url(./img/resource/banner02.png);"></div>
+            <span class="slide-num">2</span>
+        </div>
+        <div class="slide" style="background-color: #edc077;">
+            <span class="slide-num">3</span>
+        </div>
+        <div class="slide" style="background-color: #6464a0;">
+            <span class="slide-num">4</span>
+        </div>
+    </div>
+
+    <!-- mainBanner Slide -->
+    <script type="text/javascript">
+        const slide = document.querySelectorAll('.slide')
+        for(i = 0; i < slide.length; i++) {
+            slide[i].addEventListener('click', function(e) {
+                for(i = 0; i < slide.length; i++) {
+                    slide[i].className = 'slide'
+                }
+                e.currentTarget.className = 'slide ac'
+            })
+        }
+        let activeSlide = 0;
+        setInterval(() => { 
+            activeSlide += 1;
+            slide[(activeSlide + 1) % slide.length].className = 'slide'
+            slide[(activeSlide + 2) % slide.length].className = 'slide'
+            slide[(activeSlide + 3) % slide.length].className = 'slide'
+            slide[activeSlide % slide.length].className ='slide ac';
+        }, 4000);
+    </script>
+
+    <div class="pick">
+        <div class="inner">
+            <div class="mainConTit">
+                <div>
+                    <h4>Pick</h4>
+                    <p class="desc">더 알고 싶지 않나요? 여러분의 관심을 표현해 보세요</p>
+                </div>
+                <span class="more">View more</span>
+            </div>
+
+            <ul class="col-3">
+                <li class="item">
+                    <div class="thumbImg">
+                        <img src="./img/resource/thumbSample.png" alt="thumbImg">
+                    </div>
+                    <div class="text">
+                        <div class="category">파타고니아</div>
+                        <div class="name">
+                            Women’s Woolyester Pile Bomber Jacket Women’s Woolyester Pile Bomber Jacket
+                        </div>
+                    </div>
+                    <div class="subscribe">
+                        273명 정보 신청중
+                    </div>
+                    <div class="btn ac">
+                        신청중
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="thumbImg">
+                        <img src="./img/resource/thumbSample.png" alt="thumbImg">
+                    </div>
+                    <div class="text">
+                        <div class="category">파타고니아</div>
+                        <div class="name">
+                            Women’s Woolyester Pile Bomber Jacket Women’s Woolyester Pile Bomber Jacket
+                        </div>
+                    </div>
+                    <div class="subscribe">
+                        273명 정보 신청중
+                    </div>
+                    <div class="btn">
+                        궁금해요
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="thumbImg">
+                        <img src="./img/resource/thumbSample.png" alt="thumbImg">
+                    </div>
+                    <div class="text">
+                        <div class="category">파타고니아</div>
+                        <div class="name">
+                            Women’s Woolyester Pile Bomber Jacket Women’s Woolyester Pile Bomber Jacket
+                        </div>
+                    </div>
+                    <div class="subscribe">
+                        273명 정보 신청중
+                    </div>
+                    <div class="btn">
+                        궁금해요
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mainArchive">
+        <div class="inner">
+            <div class="mainConTit">
+                <div>
+                    <h4>Archive</h4>
+                    <p class="desc">함께 아카이빙한 친환경 제품들이에요</p>
+                </div>
+                <span class="more">View more</span>
+            </div>
+            <ul class="col-4">
+                <li class="item">
+                    <div class="thumbImg">
+                        <img src="./img/resource/thumbSample.png" alt="thumbImg">
+                    </div>
+                    <div class="text">
+                        <div class="category">파타고니아</div>
+                        <div class="name">
+                            Women’s Woolyester Pile Bomber Jacket Women’s Woolyester Pile Bomber Jacket
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <span>리사이클</span>
+                        <span>리사이클 폴리에스터</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="thumbImg">
+                        <img src="./img/resource/thumbSample.png" alt="thumbImg">
+                    </div>
+                    <div class="text">
+                        <div class="category">파타고니아</div>
+                        <div class="name">
+                            Women’s Woolyester Pile Bomber Jacket Women’s Woolyester Pile Bomber Jacket
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <span>리사이클</span>
+                        <span>리사이클 폴리에스터</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="thumbImg">
+                        <img src="./img/resource/thumbSample.png" alt="thumbImg">
+                    </div>
+                    <div class="text">
+                        <div class="category">파타고니아</div>
+                        <div class="name">
+                            Women’s Woolyester Pile Bomber Jacket Women’s Woolyester Pile Bomber Jacket
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <span>리사이클</span>
+                        <span>리사이클 폴리에스터</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="thumbImg">
+                        <img src="./img/resource/thumbSample.png" alt="thumbImg">
+                    </div>
+                    <div class="text">
+                        <div class="category">파타고니아</div>
+                        <div class="name">
+                            Women’s Woolyester Pile Bomber Jacket Women’s Woolyester Pile Bomber Jacket
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <span>리사이클</span>
+                        <span>리사이클 폴리에스터</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mainStories">
+        <div class="inner">
+            <div class="mainConTit">
+                <div>
+                    <h4>Stories</h4>
+                </div>
+                <span class="more">View more</span>
+            </div>
+
+            <div class="bodyWrap">
+                <div class="left">
+                    <div class="conWrap">
+                        <div class="imgWrap"><img src="./img/resource/storiesImg@2x.jpg" alt="storiesImg"></div>
+                        <div>
+                            <div class="cate">카테고리</div>
+                            <p class="copy">
+                                환경을 위해<br>
+                                친환경 제품을 사는 것이 정말<br>
+                                도움이 되나요?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="conWrap">
+                        <div class="imgWrap"><img src="./img/resource/storiesImg@2x.jpg" alt="storiesImg"></div>
+                        <div>
+                            <div class="cate">카테고리</div>
+                            <p class="copy">
+                                환경을 위해<br>
+                                친환경 제품을 사는 것이 정말<br>
+                                도움이 되나요?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="conWrap">
+                        <div class="imgWrap"><img src="./img/resource/storiesImg@2x.jpg" alt="storiesImg"></div>
+                        <div>
+                            <div class="cate">카테고리</div>
+                            <p class="copy">
+                                환경을 위해<br>
+                                친환경 제품을 사는 것이 정말<br>
+                                도움이 되나요?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="inner">
+            <div class="topCon">
+                <img class="footerLogo" src="./img/footerLogo.svg" alt="footerLogo">
+                <ul>
+                    <li>ABOUT</li>
+                    <li>이용약관</li>
+                    <li>개인정보처리방침</li>
+                </ul>
+            </div>
+            <div class="bodyCon">
+                <p>
+                    상호명 : 리마인드얼스  |  대표자 : 김혜림  |   사업자번호 : 645-06-01901  |  주소 : 서울특별시 종로구 종로 34 2층 101호<br>
+                    통신판매업신고번호 : 2022-지역명-1234  |  입금계좌 : 국민은행 123456678  |  문의 : 02-123-1234  |  메일 : hello@emindearth.com<br>
+                    롱레이블은 리마인드얼스가 운영하는 친환경 제품 임팩트 분석 플랫폼입니다.
+                </p>
+                <img class="insta" src="./img/ic_instagram.svg" alt="ic_instagram">
+            </div>
+            <span class="copyright">COPYRIGHT ⓒ LONG LABEL. All Rights Reserved.</span>
+        </div>
+    </div>
+</body>
+</html>
