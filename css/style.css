@@ -212,8 +212,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .pick .text {
   border-top: 1px solid #151515;
@@ -229,9 +228,14 @@ h4 {
 .pick .text .name {
   font-size: 15px;
   font-weight: bold;
+  line-height: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  white-space: normal;
+  word-break: break-all;
 }
 .pick .subscribe {
   padding-left: 20px;
@@ -365,8 +369,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .mainArchive .thumbImg {
   padding-top: 144%;
@@ -462,8 +465,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .mainStories .bodyWrap {
   display: flex;
@@ -657,12 +659,6 @@ h4 {
   border-bottom: 1px solid #151515;
   outline: 0;
 }
-.countSearch .inner .search::-moz-placeholder {
-  color: #9a9a9a;
-}
-.countSearch .inner .search:-ms-input-placeholder {
-  color: #9a9a9a;
-}
 .countSearch .inner .search::placeholder {
   color: #9a9a9a;
 }
@@ -781,8 +777,7 @@ h4 {
 .section-detail .container .article .conWrap .thumb img {
   height: 50px;
   width: 50px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .section-detail .container .article .conWrap .thumb .category {
   font-size: 11px;
@@ -849,8 +844,7 @@ h4 {
 .section-detail .container .followBrand .brand img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .section-detail .container .followBrand .cate {
   font-size: 20px;
@@ -1028,8 +1022,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .storyCon .imgWrap {
   aspect-ratio: 300/225;
@@ -1152,8 +1145,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .pageDetail .imgWrap {
   aspect-ratio: 540/700;
@@ -1273,8 +1265,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .pageDetail .accodion li .flexBx .left .imgWrap {
   width: 80px;
@@ -1607,6 +1598,7 @@ h4 {
   margin-left: 16px;
 }
 .pageDetail .control .btn {
+  font-size: 17px;
   width: 260px;
   height: 50px;
 }
@@ -1717,6 +1709,7 @@ h4 {
   font-weight: bold;
   margin-bottom: 12px;
   display: block;
+  line-height: 1;
 }
 .pageDetail .materials li .info p {
   font-size: 18px;
@@ -1822,12 +1815,6 @@ h4 {
   padding: 0 15px;
   font-size: 18px;
   box-sizing: border-box;
-}
-.loginForm input::-moz-placeholder {
-  color: #656565;
-}
-.loginForm input:-ms-input-placeholder {
-  color: #656565;
 }
 .loginForm input::placeholder {
   color: #656565;
@@ -1936,9 +1923,7 @@ h4 {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 .loginForm .radioWrap [type=radio]:checked {
   border: 8px solid #f63;
@@ -1999,6 +1984,22 @@ h4 {
   background-color: rgba(230, 230, 230, 0.75);
   z-index: 99;
 }
+.modalOn .modal .btn {
+  height: 36px;
+  width: 100%;
+  border: 1px solid #f63;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f63;
+  cursor: pointer;
+}
+.modalOn .modal .btn.ac, .modalOn .modal .btn:hover {
+  background-color: #f63;
+  color: #fff;
+}
 .modalOn .modal .tray {
   position: relative;
   width: 100%;
@@ -2040,6 +2041,11 @@ h4 {
   font-size: 12px;
   font-weight: 500;
 }
+.modalOn .modal .btn {
+  width: 140px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
 .modalOn .modal {
   display: block;
 }
@@ -2061,12 +2067,6 @@ h4 {
   padding: 0 15px;
   font-size: 18px;
   box-sizing: border-box;
-}
-.purchase .inner input::-moz-placeholder {
-  color: #656565;
-}
-.purchase .inner input:-ms-input-placeholder {
-  color: #656565;
 }
 .purchase .inner input::placeholder {
   color: #656565;
@@ -2440,12 +2440,6 @@ h4 {
 .talksDetail .reply .inputText .textarea {
   height: 85px;
 }
-.talksDetail .reply .inputText .textarea::-moz-placeholder {
-  color: #151515;
-}
-.talksDetail .reply .inputText .textarea:-ms-input-placeholder {
-  color: #151515;
-}
 .talksDetail .reply .inputText .textarea::placeholder {
   color: #151515;
 }
@@ -2525,12 +2519,6 @@ h4 {
   padding: 0 15px;
   font-size: 18px;
   box-sizing: border-box;
-}
-.talksWrite input::-moz-placeholder {
-  color: #656565;
-}
-.talksWrite input:-ms-input-placeholder {
-  color: #656565;
 }
 .talksWrite input::placeholder {
   color: #656565;
@@ -2641,8 +2629,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .storiesList .data {
   position: absolute;
@@ -2727,8 +2714,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .storiesDetail .top {
   flex-wrap: nowrap;
@@ -2919,8 +2905,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .about .accodion li .flexBx .left .imgWrap {
   width: 80px;
@@ -3318,4 +3303,6 @@ h4 {
 }
 .about .contents .accodion li .conWrap .mission .mark p b {
   font-weight: bold;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -790,7 +790,9 @@ h4 {
 		.name {
 			font-size: 15px;
 			font-weight: bold;
-			@include ellipsis;
+			line-height: 2;
+			// @include ellipsis;
+			@include lineClamp2;
 		}
 	}
 
@@ -1754,6 +1756,7 @@ h4 {
 		}
 
 		.btn {
+			font-size: 17px;
 			width: 260px;
 			height: 50px;
 		}
@@ -1813,6 +1816,7 @@ h4 {
 					font-weight: bold;
 					margin-bottom: 12px;
 					display: block;
+					line-height: 1;
 				}
 				p {
 					font-size: 18px;
@@ -2056,6 +2060,7 @@ h4 {
 
 @mixin modal {
 	.modal {
+		@include btn;
 		display: none;
 		position: fixed;
 		// top: $headerHeight;
@@ -2108,6 +2113,11 @@ h4 {
 				font-size: 12px;
 				font-weight: 500;
 			}
+		}
+		.btn {
+			width: 140px;
+			margin: 0 auto;
+			margin-top: 40px;
 		}
 	}
 }
