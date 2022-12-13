@@ -292,9 +292,15 @@ html {
 			border: 1px solid #151515;
 			border-radius: 40px;
 			box-sizing: border-box;
+			transition: 0.2s;
 
 			&+span {
 				margin-left: 10px;
+			}
+
+			&:hover {
+				background: #f63;
+				color: #fff;
 			}
 		}
 	}
@@ -760,6 +766,7 @@ h4 {
 		font-weight: bold;
 		color: #f63;
 		cursor: pointer;
+		transition: 0.2s;
 
 		&.ac,
 		&:hover {
@@ -1869,11 +1876,11 @@ h4 {
 				}
 			}
 		} 
-		li:nth-child(1).ac .list {background-color: #cfc1b4;}
-		li:nth-child(2).ac .list {background-color: #e07a5f;}
-		li:nth-child(3).ac .list {background-color: #6464a0;}
-		li:nth-child(4).ac .list {background-color: #81b29a;}
-		li:nth-child(5).ac .list {background-color: #edc077;}
+		.meteItem:nth-child(1).ac .list {background: url(../img/bg_material.svg) center/cover no-repeat !important;} 
+		.meteItem:nth-child(2).ac .list {background: url(../img/bg_manufacture.svg) center/cover no-repeat !important;}
+		.meteItem:nth-child(3).ac .list {background: url(../img/bg_delivery.svg) center/cover no-repeat !important;}
+		.meteItem:nth-child(4).ac .list {background: url(../img/bg_package.svg) center/cover no-repeat !important;}
+		.meteItem:nth-child(5).ac .list {background: url(../img/bg_disposal.svg) center/cover no-repeat !important;}
 	}
 
 	.guide {

@@ -256,6 +256,7 @@ h4 {
   font-weight: bold;
   color: #f63;
   cursor: pointer;
+  transition: 0.2s;
 }
 .pick .btn.ac, .pick .btn:hover {
   background-color: #f63;
@@ -408,9 +409,14 @@ h4 {
   border: 1px solid #151515;
   border-radius: 40px;
   box-sizing: border-box;
+  transition: 0.2s;
 }
 .mainArchive .tag span + span {
   margin-left: 10px;
+}
+.mainArchive .tag span:hover {
+  background: #f63;
+  color: #fff;
 }
 .mainArchive .item:nth-child(1) {
   margin-top: 36px;
@@ -615,6 +621,7 @@ h4 {
   font-weight: bold;
   color: #f63;
   cursor: pointer;
+  transition: 0.2s;
 }
 .countSearch .inner .btn.ac, .countSearch .inner .btn:hover {
   background-color: #f63;
@@ -1552,9 +1559,14 @@ h4 {
   border: 1px solid #151515;
   border-radius: 40px;
   box-sizing: border-box;
+  transition: 0.2s;
 }
 .pageDetail .tag span + span {
   margin-left: 10px;
+}
+.pageDetail .tag span:hover {
+  background: #f63;
+  color: #fff;
 }
 .pageDetail .btn {
   height: 36px;
@@ -1567,6 +1579,7 @@ h4 {
   font-weight: bold;
   color: #f63;
   cursor: pointer;
+  transition: 0.2s;
 }
 .pageDetail .btn.ac, .pageDetail .btn:hover {
   background-color: #f63;
@@ -1763,20 +1776,20 @@ h4 {
   color: #fff;
   background: url(../img/ic_mate_arr_l.svg) left center no-repeat;
 }
-.pageDetail .materials li:nth-child(1).ac .list {
-  background-color: #cfc1b4;
+.pageDetail .materials .meteItem:nth-child(1).ac .list {
+  background: url(../img/bg_material.svg) center/cover no-repeat !important;
 }
-.pageDetail .materials li:nth-child(2).ac .list {
-  background-color: #e07a5f;
+.pageDetail .materials .meteItem:nth-child(2).ac .list {
+  background: url(../img/bg_manufacture.svg) center/cover no-repeat !important;
 }
-.pageDetail .materials li:nth-child(3).ac .list {
-  background-color: #6464a0;
+.pageDetail .materials .meteItem:nth-child(3).ac .list {
+  background: url(../img/bg_delivery.svg) center/cover no-repeat !important;
 }
-.pageDetail .materials li:nth-child(4).ac .list {
-  background-color: #81b29a;
+.pageDetail .materials .meteItem:nth-child(4).ac .list {
+  background: url(../img/bg_package.svg) center/cover no-repeat !important;
 }
-.pageDetail .materials li:nth-child(5).ac .list {
-  background-color: #edc077;
+.pageDetail .materials .meteItem:nth-child(5).ac .list {
+  background: url(../img/bg_disposal.svg) center/cover no-repeat !important;
 }
 .pageDetail .guide {
   padding: 25px 0 20px;
@@ -1833,6 +1846,7 @@ h4 {
   font-weight: bold;
   color: #f63;
   cursor: pointer;
+  transition: 0.2s;
 }
 .loginForm .btn.ac, .loginForm .btn:hover {
   background-color: #f63;
@@ -1995,6 +2009,7 @@ h4 {
   font-weight: bold;
   color: #f63;
   cursor: pointer;
+  transition: 0.2s;
 }
 .modalOn .modal .btn.ac, .modalOn .modal .btn:hover {
   background-color: #f63;
@@ -2423,6 +2438,7 @@ h4 {
   font-weight: bold;
   color: #f63;
   cursor: pointer;
+  transition: 0.2s;
 }
 .talksDetail .reply .btn.ac, .talksDetail .reply .btn:hover {
   background-color: #f63;
@@ -2550,6 +2566,7 @@ h4 {
   font-weight: bold;
   color: #f63;
   cursor: pointer;
+  transition: 0.2s;
 }
 .talksWrite .btn.ac, .talksWrite .btn:hover {
   background-color: #f63;
@@ -2699,9 +2716,14 @@ h4 {
   border: 1px solid #151515;
   border-radius: 40px;
   box-sizing: border-box;
+  transition: 0.2s;
 }
 .storiesDetail .inner .tag span + span {
   margin-left: 10px;
+}
+.storiesDetail .inner .tag span:hover {
+  background: #f63;
+  color: #fff;
 }
 .storiesDetail .inner .imgWrap {
   position: relative;
