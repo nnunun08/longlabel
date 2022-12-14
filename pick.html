@@ -49,7 +49,10 @@
         <div class="inner">
             <span class="count">총 50개</span>
             <div class="right">
-                <input class="search" type="text" placeholder="Search">
+                <div class="searchWrap">
+                    <input class="search" type="text" placeholder="Search">
+                    <button class="button anchor"></button>
+                </div>
                 <span class="recent">최신순</span>
                 <span class="divider"></span>
                 <span class="popular">인기순</span>
@@ -60,8 +63,10 @@
     <div class="pick pickPage">
         <div class="inner">
             <ul class="col-4">
+
+                <!-- 신청완료 .item에 .apply -->
                 <li class="item apply">
-                    <div class="thumbImg">
+                    <div class="thumbImg anchor">
                         <img src="./img/resource/thumbSample02.png" alt="thumbImg">
                     </div>
                     <div class="text">
@@ -74,11 +79,13 @@
                         273명 정보 신청중
                     </div>
                     <div class="btn">
-                        신청중
+                        신청완료
                     </div>
                 </li>
+
+                <!-- 정보요청중 .item에 .req -->
                 <li class="item req">
-                    <div class="thumbImg">
+                    <div class="thumbImg anchor">
                         <img src="./img/resource/thumbSample.png" alt="thumbImg">
                     </div>
                     <div class="text">
@@ -94,8 +101,10 @@
                         메이커에게 정보요청중
                     </div>
                 </li>
+
+                <!-- 정보 확인중 .item에 .conf -->
                 <li class="item conf">
-                    <div class="thumbImg">
+                    <div class="thumbImg anchor">
                         <img src="./img/resource/thumbSample03.png" alt="thumbImg">
                     </div>
                     <div class="text">
@@ -111,8 +120,10 @@
                         정보 확인중
                     </div>
                 </li>
+
+                <!-- 완료 .item에 .comple -->
                 <li class="item comple">
-                    <div class="thumbImg">
+                    <div class="thumbImg anchor">
                         <img src="./img/resource/thumbSample.png" alt="thumbImg">
                     </div>
                     <div class="text">
@@ -128,8 +139,10 @@
                         완료
                     </div>
                 </li>
+
+                <!-- Default .item -->
                 <li class="item">
-                    <div class="thumbImg">
+                    <div class="thumbImg anchor">
                         <img src="./img/resource/thumbSample.png" alt="thumbImg">
                     </div>
                     <div class="text">

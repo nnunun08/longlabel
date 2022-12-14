@@ -9,6 +9,122 @@ html {
 		-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, HelveticaNeue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
+
+@mixin searchWrap {
+	.searchWrap {
+		position: relative;
+		margin-right: 20px;
+		.button {
+			position: absolute;
+			right:1px;
+			top:1px;
+			width:16px;
+			height: 16px;
+			background: transparent url(../img/ic_search.svg) center/contain no-repeat;
+			border: 0;
+			padding: 0;
+		}
+	}
+	.search {
+		background-color: transparent;
+		height: 18px;
+		font-size: 12px;
+		font-weight: 300;
+		width: 130px;
+		padding-right: 15px;
+		box-sizing: border-box;
+		border: 0;
+		border-bottom: 1px solid #151515;
+		outline: 0;
+
+		&::placeholder {
+			color: #9a9a9a;
+		}
+	}
+}
+
+@mixin inputWrap {
+	.inputWrap {
+		@include radioWrap;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 60px;
+		&.mt-10 {
+			margin-top: 10px !important;
+		}
+		&.mt-50 {
+			margin-top: 50px !important;
+		}
+		.label {
+			font-size: 18px;
+			  font-weight: bold;
+			flex: 0 0 110px;
+			text-align: left;
+		}
+		.flex-left {
+			display: flex;
+			justify-content: flex-start;
+			flex: 1 0 auto;
+		}
+		& + .inputWrap {
+			margin-top: 16px;
+		}
+	}
+}
+
+@mixin radioWrap {
+	.radioWrap {
+		display: inline-block;
+		// height: 27px;
+		[type="radio"] {
+			display: inline-block;
+			vertical-align: middle;
+			width: 27px;
+			height: 27px;
+			border: 1px solid #151515;
+			background-color: #fff;
+			border-radius: 50%;
+			padding: 0;
+			box-sizing: border-box;
+			margin: 0;
+			appearance: none;
+			&:checked {
+				border: 8px solid #f63;
+			}
+		}
+		.value {
+			vertical-align: middle;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 27px;
+			margin-left: 5px;
+		}
+		& + .radioWrap {
+			margin-left: 30px;
+		}
+	}
+}
+
+@mixin textarea {
+	.textarea {
+		background-color: transparent;
+		width: 100%;
+		height: 250px;
+		border: 1px solid #f63;
+		box-sizing: border-box;
+		padding: 15px;
+		padding-bottom: 25px;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 1.5;
+		color: #151515;
+		resize: none;
+		display: block;
+		outline: none;
+	}
+}
+
 @mixin lineClamp2 {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -74,7 +190,7 @@ html {
 			height: 58px;
 
 			.list {
-				font-size: 21px;
+				font-size: 24px;
 				font-weight: bold;
 				padding: 14px 0;
 				border-top: 1px solid #151515;
@@ -190,6 +306,7 @@ html {
 
 		.review {
 			@include inputArea;
+			@include textarea;
 			& + .review {
 				margin-top: 45px;
 			}
@@ -207,6 +324,10 @@ html {
 				&.star3 {background-image: url(../img/ic_score_3.svg);}
 				&.star4 {background-image: url(../img/ic_score_4.svg);}
 				&.star5 {background-image: url(../img/ic_score_5.svg);}
+			}
+
+			.textarea {
+				padding-top: 41px !important;
 			}
 
 			.inputMode {
@@ -293,6 +414,7 @@ html {
 			border-radius: 40px;
 			box-sizing: border-box;
 			transition: 0.2s;
+			cursor: pointer;
 
 			&+span {
 				margin-left: 10px;
@@ -383,6 +505,7 @@ html {
 			height: 16px;
 			line-height: 16px;
 			background: url(../img/ic_like.svg) left center no-repeat;
+			cursor: pointer;
 		}
 
 		.reply {
@@ -467,6 +590,7 @@ html {
 			font-size: 16px;
 			font-weight: 500;
 			min-height: 40px;
+			line-height: 1.31;
 			&:after {
 				content: '';
 				display: block;
@@ -491,36 +615,21 @@ html {
 	}
 }
 
-@mixin textarea {
-	.textarea {
-		background-color: transparent;
-		width: 100%;
-		height: 250px;
-		border: 1px solid #f63;
-		box-sizing: border-box;
-		padding: 16px;
-		padding-bottom: 25px;
-		font-size: 14px;
-		font-weight: 500;
-		line-height: 1.5;
-		color: #151515;
-		resize: none;
-		display: block;
-		outline: none;
-	}
-}
-
 body {
 	background: #F4F4F4;
+}
+
+.anchor {
+	cursor: pointer;
 }
 
 .inner {
 	width: 100%;
 	// max-width: 1290px;
-	max-width: 1096px;
+	max-width: 1136px;
 	padding: 0 20px;
 	margin: 0 auto;
-	box-sizing: content-box;
+	box-sizing: border-box;
 }
 
 $headerHeight:75px;
@@ -824,7 +933,7 @@ h4 {
 	}
 
 	&.pick .text .name {
-		line-height: 1.67;
+		line-height: 2;
 		word-break: break-all;
 		white-space: normal;
 		-webkit-line-clamp: 2;
@@ -836,6 +945,7 @@ h4 {
 		.btn {
 			background-color: #f63;
 			color: #fff;
+			box-shadow: inset 3px 3px 6px 0 rgba(0, 0, 0, 0.16);
 		}
 	}
 
@@ -853,8 +963,8 @@ h4 {
 
 			&::before {
 				content: '';
-				width: 24px;
-				height: 24px;
+				width: 16px;
+				height: 16px;
 				background: url(../img/ic_req.svg) center/contain no-repeat;
 				margin-right: 10px;
 			}
@@ -1147,24 +1257,7 @@ h4 {
 		.btn {
 			width: 320px;
 		}
-
-		.search {
-			height: 18px;
-			font-size: 12px;
-			font-weight: 300;
-			width: 130px;
-			padding-right: 15px;
-			box-sizing: border-box;
-			margin-right: 20px;
-			background: url(../img/ic_search.svg) right 1px center/16px no-repeat;
-			border: 0;
-			border-bottom: 1px solid #151515;
-			outline: 0;
-
-			&::placeholder {
-				color: #9a9a9a;
-			}
-		}
+		@include searchWrap;
 	}
 }
 
@@ -1310,8 +1403,8 @@ h4 {
 				}
 
 				.paddingBx {
-					padding: 20px 15px;
-					font-size: 16px;
+					padding: 22px 20px;
+					font-size: 14px;
 				}
 
 				.flexBx {
@@ -1319,7 +1412,7 @@ h4 {
 					gap: 10px;
 
 					&+.flexBx {
-						margin-top: 10px;
+						margin-top: 15px;
 					}
 				}
 
@@ -1383,13 +1476,14 @@ h4 {
 			.cate {
 				font-size: 20px;
 				font-weight: bold;
+				margin-bottom: 8px;
 			}
 
 			.desc {
 				font-size: 17px;
 				font-weight: 500;
 				color: #656565;
-				margin-bottom: 10px;
+				margin-bottom: 12px;
 			}
 
 			.cancle {
@@ -1418,6 +1512,7 @@ h4 {
 				font-weight: bold;
 			}
 		}
+
 	}
 }
 
@@ -1505,7 +1600,7 @@ h4 {
 			display: flex;
 
 			&+[class^="feed"] {
-				margin-top: 10px;
+				margin-top: 15px;
 			}
 
 			dt {
@@ -1543,6 +1638,11 @@ h4 {
 
 	.body {
 		padding: 24px 0 40px;
+		.text {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.36;
+		}
 	}
 }
 
@@ -1559,13 +1659,13 @@ h4 {
 		padding-top: 20px;
 
 		.category {
-			font-size: 15px;
+			font-size: 12px;
 			font-weight: 500;
 			margin-bottom: 15px;
 		}
 
 		.name {
-			font-size: 18px;
+			font-size: 16px;
 			font-weight: bold;
 			line-height: 1.39;
 			@include lineClamp2;
@@ -1575,8 +1675,8 @@ h4 {
 			position: absolute;
 			top: 0;
 			right: 0;
-			width: 23px;
-			aspect-ratio: 23/39;
+			width: 12px;
+			aspect-ratio: 12/20.8;
 			background: url(../img/stories-badge.svg) center/cover no-repeat;
 		}
 	}
@@ -1772,7 +1872,7 @@ h4 {
 	.reason {
 		text-align: right;
 		font-size: 16px;
-		font-weight: bold;
+		font-weight: 500;
 		text-decoration: underline;
 		color: #f63;
 
@@ -1892,12 +1992,8 @@ h4 {
 }
 
 
-
-
-
-
 .loginForm {
-	margin-top: 155px;
+	margin-top: 162px;
 	min-height: 500px;
 	text-align: center;
 	.inner {
@@ -1907,6 +2003,7 @@ h4 {
 
 	h2 {
 		font-size: 27px;
+		font-size: 20px;
 		font-weight: 600;
 		margin-bottom: 90px;
 	}
@@ -1967,64 +2064,9 @@ h4 {
 		color: #fff;
 	}
 
-	.inputWrap {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		min-height: 60px;
-		&.mt-10 {
-			margin-top: 10px !important;
-		}
-		&.mt-50 {
-			margin-top: 50px !important;
-		}
-		.label {
-			font-size: 18px;
-  			font-weight: bold;
-			flex: 0 0 110px;
-			text-align: left;
-		}
-		.flex-left {
-			display: flex;
-			justify-content: flex-start;
-			flex: 1 0 auto;
-		}
-		& + .inputWrap {
-			margin-top: 16px;
-		}
-	}
 	@include select;
-	.radioWrap {
-		display: inline-block;
-		// height: 27px;
-		[type="radio"] {
-			display: inline-block;
-			vertical-align: middle;
-			width: 27px;
-			height: 27px;
-			border: 1px solid #151515;
-			background-color: #fff;
-			border-radius: 50%;
-			padding: 0;
-			box-sizing: border-box;
-			margin: 0;
-			appearance: none;
-			&:checked {
-				border: 8px solid #f63;
-			}
-		}
-		.value {
-			vertical-align: middle;
-			font-size: 16px;
-			font-weight: 500;
-			line-height: 27px;
-			margin-left: 5px;
-		}
-		& + .radioWrap {
-			margin-left: 30px;
-		}
-	}
-
+	@include inputWrap;
+	
 	.privacy {
 		width: 100%;
 		padding: 12px;
@@ -2098,8 +2140,8 @@ h4 {
 				position: absolute;
 				top: 29px;
 				right:22px;
-				width: 30px;
-				height: 30px;
+				width: 24px;
+				height: 24px;
 				transform: rotate(90deg);
 				background: url(../img/ic_close.svg) center/cover no-repeat;
 				cursor: pointer;
@@ -2514,6 +2556,8 @@ h4 {
 				width:28px;
 				height: 44px;
 				background: url(../img/stories-badge_df.svg) center/contain no-repeat;
+				cursor: pointer;
+				&:hover,
 				&.ac {
 					background: url(../img/stories-badge.svg) center/contain no-repeat;					
 				}
@@ -2563,6 +2607,7 @@ h4 {
 			width: 24px;
 			height: 24px;
 			background: url(../img/ic_like.svg) center/cover no-repeat;
+			cursor: pointer;
 		}
 	}
 	.body {
@@ -2739,5 +2784,79 @@ h4 {
 				}
 			}
 		}
+	}
+}
+
+.page404 {
+	text-align: center;
+	padding-top: 222px;
+	color: #151515;
+	.logo {
+		width: 80%;
+		max-width: 520px;
+	}
+	h2 {
+		margin-top: 170px;
+		margin-bottom: 20px;
+		font-size: 28px;
+		font-weight: bold;	  
+	}
+	p {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1.56;
+	}
+}
+
+
+
+.PageEdit {
+	@include input;
+	@include radioWrap;
+	@include select;
+	@include inputWrap;
+	@include btn;
+	.leftNav {
+		.modify {
+			font-size: 20px;
+			margin-bottom: 15px;
+		}
+		h1 {
+			font-size: 31px;
+		}
+	} 
+	.container {
+		max-width: 630px;
+	}
+	.inputWrap  {
+		&.mt-10 {
+			margin-top: 10px;
+		}
+		&.mt-30 {
+			margin-top: 30px;
+		}
+		.readonly {
+			color: #656565;
+		}
+		.account {
+			&.label {
+				flex: 0 0 auto;
+			}
+			&.readonly {
+				flex: 0 0 70px;
+				text-align: right;
+				padding: 0 12px;
+			}
+		}
+		.alignLeft {
+			flex: 1 0 auto;
+			padding: 0 15px;
+		}
+	}
+
+	.btn {
+		font-size: 18px;
+		margin-top: 50px;
+		height: 50px;
 	}
 }

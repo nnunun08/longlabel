@@ -61,6 +61,4 @@ Select {
 
 Select::-ms-expand {
   display: none; /* 화살표 없애기 for IE10, 11*/
-}
-
-/*# sourceMappingURL=reset.css.map */
+}/*# sourceMappingURL=reset.css.map */
