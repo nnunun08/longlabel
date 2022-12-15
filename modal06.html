@@ -31,7 +31,7 @@
     </div>
 
     <div class="headerWrap">
-        <div class="header">
+        <div class="header pc">
             <div class="inner">
                 <div class="logo">
                     <img src="./img/logo.svg" alt="logo">
@@ -50,6 +50,69 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="header mo">
+            <div class="inner">
+                <div class="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <img src="./img/logo.svg" alt="logo">
+                </div>
+            </div>
+
+            <!-- .menuBtn 클릭이벤트 시 mobileMenu요소에 .ac 토글(숨김/노출) -->
+            <div class="mobileMenu">
+                <div class="panel">
+                    <div class="top">
+                        <div class="backArr"></div>
+                        <div class="flexBx">
+                            <div class="profile">
+                                <img src="./img/resource/pickDetail.png" alt="">
+                            </div>
+                            <div>
+                                <div class="user">
+                                    <span>닉네임</span>
+                                </div>
+                                <div class="myInfo">내 정보 보러가기</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menuList">
+                        <ul>
+                            <li>Pick</li>
+                            <li>Archive</li>
+                            <li>Talks</li>
+                            <li>Stories</li>
+                            <li>About</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dim"></div>
+            </div>
+
+            <!-- 모바일 메뉴 토글 -->
+            <script>
+                const body = document.querySelector('body')
+                const menuOpen = document.querySelector('.header .menuBtn')
+                const menuClose = document.querySelector('.header .backArr')
+                const target = document.querySelector('.header .mobileMenu')
+                const dim = document.querySelector('.header .dim')
+                menuOpen.addEventListener('click', function() {
+                    target.classList.add('ac')
+                    body.classList.add('modalOn')
+                })
+                menuClose.addEventListener('click', function() {
+                    target.classList.remove('ac')
+                    body.classList.remove('modalOn')
+                })
+                dim.addEventListener('click', function() {
+                    target.classList.remove('ac')
+                    body.classList.remove('modalOn')
+                })
+            </script>
         </div>
         <div class="headerBack"></div>
     </div>

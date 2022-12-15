@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="headerWrap">
-        <div class="header">
+        <div class="header pc">
             <div class="inner">
                 <div class="logo">
                     <img src="./img/logo.svg" alt="logo">
@@ -28,6 +28,69 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="header mo">
+            <div class="inner">
+                <div class="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <img src="./img/logo.svg" alt="logo">
+                </div>
+            </div>
+
+            <!-- .menuBtn 클릭이벤트 시 mobileMenu요소에 .ac 토글(숨김/노출) -->
+            <div class="mobileMenu">
+                <div class="panel">
+                    <div class="top">
+                        <div class="backArr"></div>
+                        <div class="flexBx">
+                            <div class="profile">
+                                <img src="./img/resource/pickDetail.png" alt="">
+                            </div>
+                            <div>
+                                <div class="user">
+                                    <span>닉네임</span>
+                                </div>
+                                <div class="myInfo">내 정보 보러가기</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menuList">
+                        <ul>
+                            <li>Pick</li>
+                            <li>Archive</li>
+                            <li>Talks</li>
+                            <li>Stories</li>
+                            <li>About</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dim"></div>
+            </div>
+
+            <!-- 모바일 메뉴 토글 -->
+            <script>
+                const body = document.querySelector('body')
+                const menuOpen = document.querySelector('.header .menuBtn')
+                const menuClose = document.querySelector('.header .backArr')
+                const target = document.querySelector('.header .mobileMenu')
+                const dim = document.querySelector('.header .dim')
+                menuOpen.addEventListener('click', function() {
+                    target.classList.add('ac')
+                    body.classList.add('modalOn')
+                })
+                menuClose.addEventListener('click', function() {
+                    target.classList.remove('ac')
+                    body.classList.remove('modalOn')
+                })
+                dim.addEventListener('click', function() {
+                    target.classList.remove('ac')
+                    body.classList.remove('modalOn')
+                })
+            </script>
         </div>
         <div class="headerBack"></div>
     </div>
@@ -167,15 +230,14 @@
             <div class="topCon">
                 <img class="footerLogo" src="./img/footerLogo.svg" alt="footerLogo">
                 <ul>
-                    <li>ABOUT</li>
                     <li>이용약관</li>
                     <li>개인정보처리방침</li>
                 </ul>
             </div>
             <div class="bodyCon">
                 <p>
-                    상호명 : 리마인드얼스  |  대표자 : 김혜림  |   사업자번호 : 645-06-01901  |  주소 : 서울특별시 종로구 종로 34 2층 101호<br>
-                    통신판매업신고번호 : 2022-지역명-1234  |  입금계좌 : 국민은행 123456678  |  문의 : 02-123-1234  |  메일 : hello@emindearth.com<br>
+                    <span>상호명&nbsp;:&nbsp;리마인드얼스</span>  |  <span>대표자&nbsp;:&nbsp;김혜림</span>  |   <span>사업자번호&nbsp;:&nbsp;645-06-01901</span>  |  <span>주소&nbsp;:&nbsp;서울특별시&nbsp;종로구&nbsp;종로&nbsp;34&nbsp;2층&nbsp;101호</span><br>
+                    <span>통신판매업신고번호&nbsp;:&nbsp;2022-지역명-1234</span>  |  <span>입금계좌&nbsp;:&nbsp;국민은행&nbsp;123456678</span>  |  <span>문의&nbsp;:&nbsp;02-123-1234</span>  |  <span>메일&nbsp;:&nbsp;hello@emindearth.com</span><br>
                     롱레이블은 리마인드얼스가 운영하는 친환경 제품 임팩트 분석 플랫폼입니다.
                 </p>
                 <img class="insta" src="./img/ic_instagram.svg" alt="ic_instagram">
