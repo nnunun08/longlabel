@@ -126,34 +126,11 @@
 
     <div class="storiesList">
         <div class="inner">
-            <ul class="col-3 infiWrap">
-                <li class="item" style="height: 600px; background-color: red;">
+            <!-- Masonry Layout -->
+            <ul class="col-3 masonry">
+                <li class="item">
                     <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
-                    </div>
-                    <div class="textBx">
-                        <div class="cate">카테고리</div>
-                        <div class="name">환경을 위해 친환경 제품을 사는 것이 정말 도움이 되나요?</div>
-                        <div class="data">
-                            <div class="like">225</div>
-                        </div>
-                    </div>
-                </li>
-                <li class="item" style="height: 450px; background-color: red;">
-                    <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
-                    </div>
-                    <div class="textBx">
-                        <div class="cate">카테고리</div>
-                        <div class="name">환경을 위해 친환경 제품을 사는 것이 정말 도움이 되나요?</div>
-                        <div class="data">
-                            <div class="like">225</div>
-                        </div>
-                    </div>
-                </li>
-                <li class="item" style="height: 530px; background-color: red;">
-                    <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
+                        <img src="./img/resource/resource_stories_01.jpg" alt="img">
                     </div>
                     <div class="textBx">
                         <div class="cate">카테고리</div>
@@ -165,7 +142,7 @@
                 </li>
                 <li class="item">
                     <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
+                        <img src="./img/resource/resource_stories_02.jpg" alt="img">
                     </div>
                     <div class="textBx">
                         <div class="cate">카테고리</div>
@@ -177,7 +154,7 @@
                 </li>
                 <li class="item">
                     <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
+                        <img src="./img/resource/resource_stories_03.jpg" alt="img">
                     </div>
                     <div class="textBx">
                         <div class="cate">카테고리</div>
@@ -189,7 +166,7 @@
                 </li>
                 <li class="item">
                     <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
+                        <img src="./img/resource/resource_stories_03.jpg" alt="img">
                     </div>
                     <div class="textBx">
                         <div class="cate">카테고리</div>
@@ -201,7 +178,7 @@
                 </li>
                 <li class="item">
                     <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
+                        <img src="./img/resource/resource_stories_01.jpg" alt="img">
                     </div>
                     <div class="textBx">
                         <div class="cate">카테고리</div>
@@ -213,7 +190,7 @@
                 </li>
                 <li class="item">
                     <div class="imgWrap">
-                        <img src="./img/resource/storiesThumb.png" alt="img">
+                        <img src="./img/resource/resource_stories_02.jpg" alt="img">
                     </div>
                     <div class="textBx">
                         <div class="cate">카테고리</div>
@@ -223,7 +200,34 @@
                         </div>
                     </div>
                 </li>
+                <li class="item">
+                    <div class="imgWrap">
+                        <img src="./img/resource/resource_stories_02.jpg" alt="img">
+                    </div>
+                    <div class="textBx">
+                        <div class="cate">카테고리</div>
+                        <div class="name">환경을 위해 친환경 제품을 사는 것이 정말 도움이 되나요?</div>
+                        <div class="data">
+                            <div class="like">225</div>
+                        </div>
+                    </div>
             </ul>
+
+            <!-- Masonry Layout js -->
+             <script>
+                window.onload = function masonryLayout() {
+                        const target = document.querySelectorAll(".masonry .item");
+                        target.forEach((item) => {
+                        item.style.gridRowEnd = `span ${item.clientHeight + 20}`;
+                        item.style.width = '100%';
+                    });
+                    const masonry = document.querySelector(".masonry");
+                    masonry.style.display = "grid";
+                    masonry.style.gridTemplateColumns = "repeat(3, 1fr)";
+                    masonry.style.gridAutoRows = "1px";
+                    masonry.style.gap = "0 20px";
+                }
+             </script>
         </div>
     </div>
 
