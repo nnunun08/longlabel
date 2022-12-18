@@ -614,7 +614,7 @@ body {
 		font-weight: 500;
 		color: #151515;
 		padding: 0 15px;
-		background: url(../img/ic_select_arr.svg) right center no-repeat;
+		background: url(../img/ic_select_arr.svg) right 7px center no-repeat;
 	}
 }
 
@@ -1334,6 +1334,8 @@ h4 {
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 45px;
+		flex-wrap: wrap;
+		gap: 20px;
 		.btn {
 			width: 320px;
 		}
@@ -2403,11 +2405,14 @@ h4 {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	.tit {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+		flex-wrap: wrap;
+		gap: 20px;
 		padding-bottom: 20px;
 		border-bottom: 1px solid #151515;
 		margin-bottom: 20px;
@@ -2558,6 +2563,7 @@ h4 {
 	.fileBx {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	.flexBx {
 		display: flex;
@@ -2683,6 +2689,7 @@ h4 {
 			font-weight: 600;
 			line-height: 1.5;
 			flex: 1 0 auto;
+			min-height: 180px;
 		}
 		.keyword {
 			border-bottom:1px solid #151515; 
@@ -2729,6 +2736,7 @@ h4 {
 			color: #000;
 		}
 		img {
+			max-width: 100%;
 			margin: 40px auto;
 		}
 	}
@@ -3379,7 +3387,7 @@ h4 {
 
 	.pageTab .inner {
 		ul {
-			overflow-y: auto;
+			overflow-x: auto;
 			li {
 				flex: 0 0 auto;
 			}
@@ -3389,5 +3397,60 @@ h4 {
 		} 
 		
 	}
+	.col-4 {
+		gap: 20px 10px;
+	}
+	.col-4 > .item {
+		width: calc((100% - 20px) / 2);
+	}
+
+	.pageDetail {
+		.col-2 > .item {
+			width: 100%;
+		}
+	}
+
+	.purchase {
+		margin-top: 0;
+	}
+	.tableWrap {
+		overflow: auto;
+		table {
+			min-width: 560px;
+		}
+	}
+	.storiesDetail .top {
+		flex-wrap: wrap;
+		&.col-2 > .item {
+			width: 100%;
+		}
+	}
 }
 
+
+@media screen and (max-width:520px) {
+	.talksDetail {
+		.flexBx {
+			gap: 20px;
+		}
+		
+		.reply {
+			.inputText .textarea {
+				height: 140px;
+			}
+			.btn {
+				flex: 1 0 auto;
+				margin-left: 0;
+				height: 52px;
+			}
+		}  
+	} 
+	.talksWrite label,
+	.talksWrite .imgBx .img {
+		width: 40px;
+		height: 40px;
+	}
+	.talksWrite label {
+		background: #fff url(../img/ic_file_add.svg) center/20px no-repeat;
+	}
+}
