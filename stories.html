@@ -209,22 +209,8 @@
                         </div>
                     </div>
             </ul>
-
             <!-- Masonry Layout js -->
-             <script>
-                window.onload = function masonryLayout() {
-                        const target = document.querySelectorAll(".masonry .item");
-                        target.forEach((item) => {
-                        item.style.gridRowEnd = `span ${item.clientHeight + 20}`;
-                        item.style.width = '100%';
-                    });
-                    const masonry = document.querySelector(".masonry");
-                    masonry.style.display = "grid";
-                    masonry.style.gridTemplateColumns = "repeat(3, 1fr)";
-                    masonry.style.gridAutoRows = "1px";
-                    masonry.style.gap = "0 20px";
-                }
-             </script>
+             <script src="./js/masonry.js"></script>
         </div>
     </div>
 

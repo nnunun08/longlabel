@@ -13,6 +13,36 @@ body {
 	min-width: 1100px;
 }
 
+@mixin masonry {
+	.masonry {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0 20px;
+		> .item {
+			width: calc((100% - 40px)/3);
+			height: auto;
+			.imgWrap {
+				width: 100%;
+				height: auto;
+				aspect-ratio:initial;
+				cursor: pointer;
+				img {
+					position: static;
+					display: block;
+					height: auto;
+				}
+			}
+		}
+	}
+}
+@mixin masonryMobile {
+	.masonry {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0 10px;
+		> .item {
+			width :calc((100% - 10px) / 2)
+		}
+	}
+}
 
 @mixin searchWrap {
 	.searchWrap {
@@ -869,32 +899,6 @@ h4 {
 	}
 }
 
-.col-3.masonry {
-	display: block;
-	// display:grid;
-	// gap: 0 20px;
-	// grid-template-columns: repeat(3, 1fr);
-  	// grid-auto-rows: 1px;
-}
-.masonry {
-	> .item {
-		width: 100%;
-		width: calc((100% - 40px)/3);
-		height: auto;
-		.imgWrap {
-			width: 100%;
-			height: auto;
-			aspect-ratio:initial;
-			img {
-				position: static;
-				display: block;
-				height: auto;
-				max-height: 450px;
-				min-height: 200px;
-			}
-		}
-	}
-}
 
 .col-4 {
 	display: flex;
@@ -1118,7 +1122,11 @@ h4 {
 	}
 
 	@include tag;
-
+	.tag {
+		span {
+			padding: 3px 10px;
+		}
+	}
 	.item:nth-child(1) {
 		margin-top: 0;
 		transform: rotate(3deg);
@@ -1164,7 +1172,9 @@ h4 {
 
 	.bodyWrap {
 		display: flex;
-
+		.mobile {
+			display: none;
+		}
 		.conWrap {
 			display: flex;
 			align-items: flex-end;
@@ -2590,13 +2600,7 @@ h4 {
 		}
 	}
 }
-
-.storiesList {
-	@include imgWrap;
-	@include likeReply;
-	.imgWrap {
-		aspect-ratio: 538/450;
-	}
+@mixin storiesItem {
 	.item {
 		.cate {
 			font-size: 15px;
@@ -2605,7 +2609,7 @@ h4 {
 		}
 		.name {
 			font-size: 18px;
-  			font-weight: bold;
+			  font-weight: bold;
 			line-height: 1.56;
 			margin-top: 10px;
 		}
@@ -2622,6 +2626,18 @@ h4 {
 			right: 25px;
 			bottom: 22px;
 		}
+	}
+}
+.storiesList {
+	@include imgWrap;
+	@include likeReply;
+	@include storiesItem;
+	@include masonry;
+	.imgWrap {
+		aspect-ratio: 538/450;
+	}
+	.col-3 {
+		display: block;
 	}
 }
 
@@ -3186,10 +3202,22 @@ h4 {
 	.mainArchive,
 	.mainStories {
 		padding: 0;
-		margin: 45px 0;
+		margin: 75px 0;
 		@include mainConTit;
+		.mainConTit {
+			margin-bottom: 20px;
+		}
 	}
 	.pick {
+		margin-top: 35px;
+		
+		.thumbImg {
+			margin-bottom: 10px;
+		}
+		.text .name {
+			font-size: 13px;
+			line-height: 1.31;
+		}
 		.col-3 {
 			gap: 10px;
 			flex-wrap: nowrap;
@@ -3199,7 +3227,7 @@ h4 {
 			padding: 0 $innerPadding;
 			> .item {
 				// width: calc((100% - 10px) / 2);
-				width: 40%;
+				width: 41%;
 				min-width: 160px;
 				flex: 0 0 auto;
 			}
@@ -3210,70 +3238,97 @@ h4 {
 	}
 
 	.mainArchive {
-		.item {
-			transform: rotate(0) !important;
-			margin-top: 0 !important;
-		}		
+		.col-4 {
+			gap: 10px;
+			flex-wrap: nowrap;
+			overflow: auto;
+			margin-left: -($innerPadding);
+			margin-right: -($innerPadding);
+			padding: 0 $innerPadding;
+			.item {
+				transform: rotate(0) !important;
+				margin-top: 0 !important;
+				width: 62.8%;
+				min-width: 245px;
+				flex: 0 0 auto;
+				.thumbImg {
+					margin-bottom: 10px;
+				}
+				.text {
+					padding: 10px 0;
+					border-top: 1px solid #151515;
+					border-bottom: 1px solid #151515;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					.name {
+						font-size: 13px;
+						font-weight: 600;
+						line-height: 1.31;
+						-webkit-line-clamp: 1;
+					}
+				}
+			}		
+		}
 	}
 	.mainStories {
 		.bodyWrap {
-			@mixin columWidth {
-				width: 50vw;
-				max-width: 320px;
-				min-width:220px;
-			}
-			@include fullInner;
-			overflow: auto;
-			
-			.left {
-				width: auto;
-				padding-right: 0;
-
-			}
+			.left,
 			.right {
-				display: flex;
-				width: auto;
-				gap: 0;
-				.conWrap {
-					& + .conWrap {
-						margin-top: 0;
+				display: none;
+			}
+			.mobile {
+				display: block;
+				position: relative;
+				padding-bottom: 0px;
+				@include masonry;
+				@include masonryMobile;
+				.masonry {
+					@include storiesItem;
+					display: block;
+					> .item {
+						width: calc((100% - 10px) / 2);
 					}
-					&:last-child {
-						margin-right: 15px;
+					.textBx {
+						padding: 10px !important;
+						.cate {
+							font-size: 10px;
+							margin: 0;
+						}
+						.name {
+							font-size: 13px;
+							margin-top: 5px;
+							line-height: 1.31;
+							@include lineClamp2;
+						}
+					}
+				}
+
+				.masoryMore {
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: -60px;
+					width: 100vw;
+					margin-left: -($innerPadding);
+					margin-right: -($innerPadding);
+					height: 192px;
+					background-image: url(../img/bg_blur.png);
+					background-repeat: repeat;
+					background-size: 1px 100%;
+					text-align: center;
+					padding-top: 74px;
+					box-sizing: border-box;
+					@include btn;
+					.moreBtn {
+						font-size: 11px;
+						width: 160px;
+						height: 27px;
+						border-radius: 100px;
+						margin: 0 auto;
 					}
 				}
 			}
-			.conWrap {
-				@include columWidth;
-				flex-direction: column;
-				justify-content: flex-start;
-				align-items: flex-start;
-				margin-left: 15px;
-			}
-			.imgWrap {
-				width: 100% !important;
-				margin-right: 0 !important;
-				aspect-ratio: 220/150 !important;
-			}
-			.textWrap {
-				width: 100%;
-				box-sizing: border-box;
-				padding: 13px;
-				border: 1px solid #151515;
-				border-top: 0;
-				background-color: #F5F5F5;
-			}
-			.cate {
-				font-size: 10px;
-				margin-bottom: 5px;
-			}
-			.copy {
-				@include lineClamp2;
-				font-size: 13px !important;
-				line-height: 1.2;
-				font-weight: 500;
-			}
-		} 
+		}
 	}
 
 
@@ -3311,17 +3366,16 @@ h4 {
 			font-size: 11px;
 		}
 	}
-
-
-	.masonry {
-		display: block !important;
-		.item + .item {
-			margin-top: 20px;
-		}
-		.item img {
-			max-height: fit-content !important;
-		}
-	}
+	.storiesList {
+		@include masonryMobile;
+		// .masonry {
+		// 	grid-template-columns: repeat(2, 1fr);
+		// 	gap: 0 10px;
+		// 	> .item {
+		// 		width :calc((100% - 10px) / 2)
+		// 	}
+		// }
+	} 
 
 	.pageTab .inner {
 		ul {
