@@ -176,6 +176,15 @@ h4 {
   width: calc((100% - 40px) / 3);
 }
 
+.col-3.infiWrap {
+  display: grid;
+  gap: 20px;
+}
+
+.infiWrap > .item {
+  width: 100%;
+}
+
 .col-4 {
   display: flex;
   justify-content: flex-start;
@@ -226,7 +235,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .pick .text {
   border-top: 1px solid #151515;
@@ -385,7 +395,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .mainArchive .thumbImg {
   margin-bottom: 20px;
@@ -487,7 +498,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .mainStories .bodyWrap {
   display: flex;
@@ -695,6 +707,12 @@ h4 {
   border-bottom: 1px solid #151515;
   outline: 0;
 }
+.countSearch .inner .search::-moz-placeholder {
+  color: #9a9a9a;
+}
+.countSearch .inner .search:-ms-input-placeholder {
+  color: #9a9a9a;
+}
 .countSearch .inner .search::placeholder {
   color: #9a9a9a;
 }
@@ -813,7 +831,8 @@ h4 {
 .section-detail .container .article .conWrap .thumb img {
   height: 50px;
   width: 50px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .section-detail .container .article .conWrap .thumb .category {
   font-size: 11px;
@@ -880,7 +899,8 @@ h4 {
 .section-detail .container .followBrand .brand img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .section-detail .container .followBrand .cate {
   font-size: 20px;
@@ -1069,7 +1089,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .storyCon .imgWrap {
   aspect-ratio: 300/225;
@@ -1192,7 +1213,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .pageDetail .imgWrap {
   aspect-ratio: 540/700;
@@ -1312,7 +1334,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .pageDetail .accodion li .flexBx .left .imgWrap {
   width: 80px;
@@ -1916,6 +1939,12 @@ h4 {
   font-size: 18px;
   box-sizing: border-box;
 }
+.loginForm input::-moz-placeholder {
+  color: #656565;
+}
+.loginForm input:-ms-input-placeholder {
+  color: #656565;
+}
 .loginForm input::placeholder {
   color: #656565;
 }
@@ -2005,7 +2034,9 @@ h4 {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .loginForm .inputWrap .radioWrap [type=radio]:checked {
   border: 8px solid #f63;
@@ -2170,6 +2201,12 @@ h4 {
   padding: 0 15px;
   font-size: 18px;
   box-sizing: border-box;
+}
+.purchase .inner input::-moz-placeholder {
+  color: #656565;
+}
+.purchase .inner input:-ms-input-placeholder {
+  color: #656565;
 }
 .purchase .inner input::placeholder {
   color: #656565;
@@ -2576,6 +2613,12 @@ h4 {
 .talksDetail .reply .inputText .textarea {
   height: 85px;
 }
+.talksDetail .reply .inputText .textarea::-moz-placeholder {
+  color: #151515;
+}
+.talksDetail .reply .inputText .textarea:-ms-input-placeholder {
+  color: #151515;
+}
 .talksDetail .reply .inputText .textarea::placeholder {
   color: #151515;
 }
@@ -2655,6 +2698,12 @@ h4 {
   padding: 0 15px;
   font-size: 18px;
   box-sizing: border-box;
+}
+.talksWrite input::-moz-placeholder {
+  color: #656565;
+}
+.talksWrite input:-ms-input-placeholder {
+  color: #656565;
 }
 .talksWrite input::placeholder {
   color: #656565;
@@ -2767,7 +2816,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .storiesList .data {
   position: absolute;
@@ -2863,7 +2913,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .storiesDetail .top {
   flex-wrap: nowrap;
@@ -3056,7 +3107,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about .accodion li .flexBx .left .imgWrap {
   width: 80px;
@@ -3532,6 +3584,12 @@ h4 {
   font-size: 18px;
   box-sizing: border-box;
 }
+.PageEdit input::-moz-placeholder {
+  color: #656565;
+}
+.PageEdit input:-ms-input-placeholder {
+  color: #656565;
+}
 .PageEdit input::placeholder {
   color: #656565;
 }
@@ -3549,7 +3607,9 @@ h4 {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .PageEdit .radioWrap [type=radio]:checked {
   border: 8px solid #f63;
@@ -3595,7 +3655,9 @@ h4 {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .PageEdit .inputWrap .radioWrap [type=radio]:checked {
   border: 8px solid #f63;
@@ -3789,7 +3851,8 @@ h4 {
   .header.mo .mobileMenu .panel .top .profile img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .header.mo .mobileMenu .panel .top .user {
     font-size: 16px;
@@ -3955,6 +4018,4 @@ h4 {
   .footer .copyright {
     font-size: 11px;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

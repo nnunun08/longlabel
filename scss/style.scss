@@ -867,6 +867,16 @@ h4 {
 	}
 }
 
+.col-3.infiWrap {
+	display:grid;
+	gap: 20px;
+}
+.infiWrap {
+	> .item {
+		width: 100%;
+	}
+}
+
 .col-4 {
 	display: flex;
 	justify-content: flex-start;
