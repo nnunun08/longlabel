@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -47,14 +48,11 @@
                     <div class="top">
                         <div class="backArr"></div>
                         <div class="flexBx">
-                            <div class="profile">
-                                <img src="./img/resource/pickDetail.png" alt="">
-                            </div>
+                            
                             <div>
                                 <div class="user">
-                                    <span>닉네임</span>
+                                    <span>로그인해 주세요</span>
                                 </div>
-                                <div class="myInfo">내 정보 보러가기</div>
                             </div>
                         </div>
                     </div>
@@ -110,28 +108,39 @@
         <div class="slide" style="background-color: #6464a0;">
             <span class="slide-num">4</span>
         </div>
+
+        <!-- mainBanner Slide -->
+        <script type="text/javascript">
+            const slide = document.querySelectorAll('.slide')
+            for(i = 0; i < slide.length; i++) {
+                slide[i].addEventListener('click', function(e) {
+                    for(i = 0; i < slide.length; i++) {
+                        slide[i].className = 'slide'
+                    }
+                    e.currentTarget.className = 'slide ac'
+                })
+            }
+            let activeSlide = 0;
+            setInterval(() => { 
+                activeSlide += 1;
+                slide[(activeSlide + 1) % slide.length].className = 'slide'
+                slide[(activeSlide + 2) % slide.length].className = 'slide'
+                slide[(activeSlide + 3) % slide.length].className = 'slide'
+                slide[activeSlide % slide.length].className ='slide ac';
+            }, 4000);
+        </script>
     </div>
 
-    <!-- mainBanner Slide -->
-    <script type="text/javascript">
-        const slide = document.querySelectorAll('.slide')
-        for(i = 0; i < slide.length; i++) {
-            slide[i].addEventListener('click', function(e) {
-                for(i = 0; i < slide.length; i++) {
-                    slide[i].className = 'slide'
-                }
-                e.currentTarget.className = 'slide ac'
-            })
-        }
-        let activeSlide = 0;
-        setInterval(() => { 
-            activeSlide += 1;
-            slide[(activeSlide + 1) % slide.length].className = 'slide'
-            slide[(activeSlide + 2) % slide.length].className = 'slide'
-            slide[(activeSlide + 3) % slide.length].className = 'slide'
-            slide[activeSlide % slide.length].className ='slide ac';
-        }, 4000);
-    </script>
+
+    <div class="mainBannerMobile">
+        <div class="item" style="background-color: #fd6633;">
+            <img src="./img/resource/banner01.png" alt="">
+        </div>
+        <div class="item" style="background-color: #10887b;">
+            <img src="./img/resource/banner02.png" alt="">
+        </div>
+    </div>
+    
 
     <div class="pick">
         <div class="inner">
@@ -344,5 +353,21 @@
             <span class="copyright">COPYRIGHT ⓒ LONG LABEL. All Rights Reserved.</span>
         </div>
     </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('.mainBannerMobile').slick({
+                infinite: true,
+                // autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+          });
+        });
+      </script>
+
 </body>
 </html>

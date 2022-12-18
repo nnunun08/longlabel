@@ -755,7 +755,9 @@ $headerHeight:75px;
 		}
 	}
 }
-
+.mainBannerMobile {
+	display: none;		
+}
 .mainBanner {
 	height: 520px;
 	display: flex;
@@ -2533,7 +2535,7 @@ h4 {
 	}
 	label {
 		display: inline-block;
-		border: 1px solid #f63;
+		border: 1px solid #707070;
 		background: #fff url(../img/ic_file_add.svg) center no-repeat;
 		width: 80px;
 		height:80px;
@@ -2551,6 +2553,8 @@ h4 {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
+    	gap: 20px;
 	}
 	.btn {
 		width: 190px;
@@ -2560,9 +2564,29 @@ h4 {
 	.imgBx {
 		display: inline-flex;
 		gap: 10px;
-		img {
+		.img {
+			position: relative;
 			width:80px;
 			height: 80px;
+			&:last-child {
+				margin-right: 10px
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.remove {
+				position: absolute;
+				right: -8px;
+				top: -8px;
+				width: 16px;
+				height: 16px;
+				border: 1px solid #f63;
+				border-radius: 50%;
+				background: #fff url(../img/ic_file_remove.svg) center no-repeat;
+				cursor: pointer;
+			}
 		}
 	}
 }
@@ -2995,15 +3019,15 @@ h4 {
 				bottom: 0;
 				width: 80%;
 				max-width: 400px;
-				min-width: 320px;
+				min-width: 260px;
 				height: 100vh;
 				background-color: #fff;
 				.top {
 					background-color: #f63;
 					color: #151515;
 					width: 100%;
-					height: 185px;
-					padding: 15px;
+					height: 160px;
+					padding: 18px;
 					display: flex;
 					align-items: center;
 					justify-content: flex-start;
@@ -3038,9 +3062,13 @@ h4 {
 						}
 					}
 					.user {
-						font-size: 16px;
+						font-size: 18px;
 						font-weight: bold;
-						margin-bottom: 5px;
+						cursor: pointer;
+						&.login {
+							padding-right: 27px;
+							background: url(../img/ic_mobile_user_arr.svg) right center no-repeat;
+						}
 					}
 					.myInfo {
 						font-size: 12px;
@@ -3049,15 +3077,19 @@ h4 {
 					}
 				}
 				.menuList {
-					padding: 32px 15px;
+					padding: 38px 18px;
 					ul {
 						display: flex;
 						flex-direction: column;
 						li {
 							margin: 0;
-							font-size: 23px;
+							font-size: 21px;
 							font-weight: bold;
 							color: #151515;
+							&:hover,
+							&.ac {
+								color: #f63;
+							}
 						}
 						li + li {
 							margin-top:60px;
@@ -3101,6 +3133,55 @@ h4 {
 			}
 		}
 	}
+
+	.mainBanner {
+		display: none;
+	}
+	.mainBannerMobile {
+		position: relative;
+		display: block;
+		.slick-arrow {
+			display: none !important;
+		}
+		.item {
+			padding-top: 115px;
+			height: 480px;
+			display: flex;
+			align-items: flex-start;
+			overflow: hidden;
+			box-sizing: border-box;
+			img {
+				width: 100%;
+			}
+		}
+		.slick-dots {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 67px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			li.slick-active button {
+				opacity: 1;
+			}
+			li button {
+				display: block;
+				width: 5px;
+				height: 5px;
+				border: 0;
+				border-radius: 50%;
+				background-color: #fff;
+				opacity: 0.3;
+				text-indent: -9999px;
+				padding: 0;
+			}
+			li + li {
+				margin-left: 5px;
+			}
+		}
+	}
 	.pick,
 	.mainArchive,
 	.mainStories {
@@ -3111,12 +3192,20 @@ h4 {
 	.pick {
 		.col-3 {
 			gap: 10px;
+			flex-wrap: nowrap;
+			overflow: auto;
+			margin-left: -($innerPadding);
+			margin-right: -($innerPadding);
+			padding: 0 $innerPadding;
 			> .item {
-				width: calc((100% - 10px) / 2);
+				// width: calc((100% - 10px) / 2);
+				width: 40%;
+				min-width: 160px;
+				flex: 0 0 auto;
 			}
-			> .item:nth-child(2) ~ .item {
-				display: none;
-			}
+			// > .item:nth-child(2) ~ .item {
+			// 	display: none;
+			// }
 		}
 	}
 
@@ -3235,12 +3324,13 @@ h4 {
 	}
 
 	.pageTab .inner {
-		overflow-y: auto;
 		ul {
-			padding-right: 20px;
-			min-width: max-content;
+			overflow-y: auto;
 			li {
 				flex: 0 0 auto;
+			}
+			li:last-child {
+				margin-right: 20px;
 			}
 		} 
 		
