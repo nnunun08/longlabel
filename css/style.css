@@ -419,6 +419,7 @@ h4 {
 .mainArchive .tag {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 .mainArchive .tag span {
   display: block;
@@ -430,9 +431,6 @@ h4 {
   box-sizing: border-box;
   transition: 0.2s;
   cursor: pointer;
-}
-.mainArchive .tag span + span {
-  margin-left: 10px;
 }
 .mainArchive .tag span:hover {
   background: #f63;
@@ -1031,6 +1029,9 @@ h4 {
   background: url(../img/ic_like.svg) left center no-repeat;
   cursor: pointer;
 }
+.table .body .data .like.ac, .table .body .data .like:hover {
+  background-image: url(../img/ic_like_ac.svg);
+}
 .table .body .data .reply {
   padding-left: 20px;
   height: 16px;
@@ -1039,7 +1040,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.table .body .data .reply:hover {
+.table .body .data .reply.ac, .table .body .data .reply:hover {
   background-image: url(../img/ic_reply_ac.svg);
 }
 
@@ -1119,6 +1120,7 @@ h4 {
 .table02 {
   table-layout: fixed;
   width: 100%;
+  min-width: 720px !important;
   border-collapse: collapse;
   font-size: 16px;
   font-weight: 500;
@@ -1258,9 +1260,12 @@ h4 {
   overflow: hidden;
 }
 .pageDetail .accodion li .list {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 24px;
   font-weight: bold;
-  padding: 14px 0;
+  padding: 14px 60px 14px 10px;
   border-top: 1px solid #151515;
   background: url(../img/acc_plus.svg) right top 15px/30px no-repeat;
   min-height: 58px;
@@ -1375,6 +1380,9 @@ h4 {
   background: url(../img/ic_like.svg) left center no-repeat;
   cursor: pointer;
 }
+.pageDetail .accodion .question .data .like.ac, .pageDetail .accodion .question .data .like:hover {
+  background-image: url(../img/ic_like_ac.svg);
+}
 .pageDetail .accodion .question .data .reply {
   padding-left: 20px;
   height: 16px;
@@ -1383,7 +1391,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.pageDetail .accodion .question .data .reply:hover {
+.pageDetail .accodion .question .data .reply.ac, .pageDetail .accodion .question .data .reply:hover {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .pageDetail .accodion .question + .question {
@@ -1647,6 +1655,7 @@ h4 {
 .pageDetail .tag {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 .pageDetail .tag span {
   display: block;
@@ -1658,9 +1667,6 @@ h4 {
   box-sizing: border-box;
   transition: 0.2s;
   cursor: pointer;
-}
-.pageDetail .tag span + span {
-  margin-left: 10px;
 }
 .pageDetail .tag span:hover {
   background: #f63;
@@ -1685,13 +1691,11 @@ h4 {
 }
 .pageDetail .tag {
   margin-bottom: 15px;
+  gap: 10px 20px;
 }
 .pageDetail .tag span {
   padding: 8px 15px;
   font-size: 15px;
-}
-.pageDetail .tag span + span {
-  margin-left: 20px;
 }
 .pageDetail .control {
   display: flex;
@@ -1961,6 +1965,8 @@ h4 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 .loginForm .flexBx span {
   font-size: 14px;
@@ -2052,6 +2058,12 @@ h4 {
 .loginForm .inputWrap + .inputWrap {
   margin-top: 16px;
 }
+.loginForm .inputWrap .rightCon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 156px;
+}
 .loginForm .privacy {
   width: 100%;
   padding: 12px;
@@ -2117,7 +2129,7 @@ h4 {
 }
 .modalOn .modal .tray {
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 520px;
   height: auto;
   padding: 28px;
@@ -2302,6 +2314,9 @@ h4 {
   background: url(../img/ic_like.svg) left center no-repeat;
   cursor: pointer;
 }
+.talksList .data .like.ac, .talksList .data .like:hover {
+  background-image: url(../img/ic_like_ac.svg);
+}
 .talksList .data .reply {
   padding-left: 20px;
   height: 16px;
@@ -2310,7 +2325,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.talksList .data .reply:hover {
+.talksList .data .reply.ac, .talksList .data .reply:hover {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .talksList table {
@@ -2367,6 +2382,9 @@ h4 {
   background: url(../img/ic_like.svg) left center no-repeat;
   cursor: pointer;
 }
+.talksDetail .question .data .like.ac, .talksDetail .question .data .like:hover {
+  background-image: url(../img/ic_like_ac.svg);
+}
 .talksDetail .question .data .reply {
   padding-left: 20px;
   height: 16px;
@@ -2375,7 +2393,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.talksDetail .question .data .reply:hover {
+.talksDetail .question .data .reply.ac, .talksDetail .question .data .reply:hover {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .talksDetail .question + .question {
@@ -2499,6 +2517,9 @@ h4 {
   width: 20px;
   height: 20px;
   background: url(../img/ic_like.svg) center/cover no-repeat;
+}
+.talksDetail .tit .like.ac, .talksDetail .tit .like:hover {
+  background-image: url(../img/ic_like_ac.svg);
 }
 .talksDetail .name {
   font-size: 14px;
@@ -2823,6 +2844,9 @@ h4 {
   background: url(../img/ic_like.svg) left center no-repeat;
   cursor: pointer;
 }
+.storiesList .data .like.ac, .storiesList .data .like:hover {
+  background-image: url(../img/ic_like_ac.svg);
+}
 .storiesList .data .reply {
   padding-left: 20px;
   height: 16px;
@@ -2831,7 +2855,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.storiesList .data .reply:hover {
+.storiesList .data .reply.ac, .storiesList .data .reply:hover {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .storiesList .item .cate {
@@ -2893,6 +2917,7 @@ h4 {
 .storiesDetail .inner .tag {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 .storiesDetail .inner .tag span {
   display: block;
@@ -2904,9 +2929,6 @@ h4 {
   box-sizing: border-box;
   transition: 0.2s;
   cursor: pointer;
-}
-.storiesDetail .inner .tag span + span {
-  margin-left: 10px;
 }
 .storiesDetail .inner .tag span:hover {
   background: #f63;
@@ -2996,6 +3018,9 @@ h4 {
   background: url(../img/ic_like.svg) center/cover no-repeat;
   cursor: pointer;
 }
+.storiesDetail .top .like:hover, .storiesDetail .top .like.ac {
+  background-image: url(../img/ic_like_ac.svg);
+}
 .storiesDetail .body {
   text-align: center;
 }
@@ -3052,9 +3077,12 @@ h4 {
   overflow: hidden;
 }
 .about .accodion li .list {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 24px;
   font-weight: bold;
-  padding: 14px 0;
+  padding: 14px 60px 14px 10px;
   border-top: 1px solid #151515;
   background: url(../img/acc_plus.svg) right top 15px/30px no-repeat;
   min-height: 58px;
@@ -3169,6 +3197,9 @@ h4 {
   background: url(../img/ic_like.svg) left center no-repeat;
   cursor: pointer;
 }
+.about .accodion .question .data .like.ac, .about .accodion .question .data .like:hover {
+  background-image: url(../img/ic_like_ac.svg);
+}
 .about .accodion .question .data .reply {
   padding-left: 20px;
   height: 16px;
@@ -3177,7 +3208,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.about .accodion .question .data .reply:hover {
+.about .accodion .question .data .reply.ac, .about .accodion .question .data .reply:hover {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .about .accodion .question + .question {
@@ -3691,6 +3722,12 @@ h4 {
 }
 .PageEdit .inputWrap + .inputWrap {
   margin-top: 16px;
+}
+.PageEdit .inputWrap .rightCon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 156px;
 }
 .PageEdit .btn {
   height: 36px;
@@ -4222,8 +4259,31 @@ h4 {
   .storiesDetail .top.col-2 > .item {
     width: 100%;
   }
-}
-@media screen and (max-width: 520px) {
+  .storiesDetail .bottom {
+    margin-bottom: 200px;
+  }
+  .storiesDetail .bottom .col-3 {
+    flex-wrap: nowrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: auto;
+    gap: 10px;
+  }
+  .storiesDetail .bottom .col-3 > .item {
+    min-width: 200px;
+  }
+  .countSearch.alignTop .inner {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+  .countSearch.alignTop .inner .btn {
+    width: 100%;
+    flex: 1 0 auto;
+  }
   .talksDetail .flexBx {
     gap: 20px;
   }
@@ -4242,6 +4302,112 @@ h4 {
   }
   .talksWrite label {
     background: #fff url(../img/ic_file_add.svg) center/20px no-repeat;
+  }
+  .talksWrite .btn {
+    flex: 1 0 auto;
+  }
+  .about .inner {
+    flex-direction: column;
+  }
+  .about .logo {
+    flex-basis: 140px;
+  }
+  .about .contents .accodion li .list {
+    font-size: 16px;
+  }
+  .about .contents .accodion li .conWrap .mission .mark {
+    flex-wrap: wrap;
+  }
+  .about .contents .accodion li .conWrap .mission .mark p {
+    flex: 1 0 auto;
+  }
+  .section-detail .inner {
+    flex-direction: column;
+  }
+  .section-detail .pick .col-3 {
+    flex-wrap: wrap;
+    gap: 30px 10px;
+  }
+  .section-detail .pick .col-3 > .item {
+    width: calc((100% - 10px) / 2);
+  }
+  .section-detail .container {
+    min-height: 720px;
+  }
+  .section-detail .leftNav {
+    width: 100%;
+    flex-basis: 220px;
+  }
+  .section-detail .leftNav .modify {
+    margin-bottom: 35px;
+  }
+  .section-detail .leftNav ul {
+    margin-top: 55px;
+    display: flex;
+    gap: 20px;
+    overflow: auto;
+    width: 100vw;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+  .section-detail .leftNav ul li {
+    flex: 0 0 auto;
+  }
+  .section-detail .leftNav ul li + li {
+    margin: 0;
+  }
+  .section-detail .flexBx {
+    flex-direction: column;
+  }
+  .section-detail .storyCon.col-3 {
+    flex-wrap: wrap;
+    gap: 30px 20px;
+  }
+  .section-detail .storyCon.col-3 > .item {
+    width: calc((100% - 20px) / 2);
+  }
+  .section-detail .container .followBrand {
+    gap: 45px 30px;
+  }
+  .section-detail .container .followBrand > .item {
+    width: calc((100% - 60px) / 3);
+  }
+  .section-detail .container .voc {
+    text-align: left;
+  }
+  .inputWrapDual {
+    flex-wrap: wrap;
+  }
+  .pageDetail .accodion li .flexBx {
+    flex-wrap: wrap;
+  }
+  .pageDetail .accodion .question .flexBx .inputText {
+    margin-right: 0;
+  }
+  .pageDetail .accodion .question .flexBx .inputText .textarea {
+    height: 140px;
+  }
+  .pageDetail .accodion .question .flexBx .btn {
+    flex: 1 0 100%;
+    height: 36px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .section-detail .storyCon.col-3 {
+    flex-wrap: wrap;
+    gap: 60px 10px;
+  }
+  .section-detail .storyCon.col-3 > .item {
+    width: 100%;
+  }
+  .section-detail .container .followBrand {
+    gap: 45px 30px;
+  }
+  .section-detail .container .followBrand > .item {
+    width: calc((100% - 30px) / 2);
   }
 }
 
