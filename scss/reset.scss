@@ -59,6 +59,8 @@ input {
 	-webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
+	-webkit-border-radius: 0;
+			border-radius: 0;
 }
 
 /* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */

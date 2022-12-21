@@ -993,7 +993,7 @@ h4 {
 		.name {
 			font-size: 15px;
 			font-weight: bold;
-			line-height: 2;
+			line-height: 1.5;
 			// @include ellipsis;
 			@include lineClamp2;
 		}
@@ -1007,7 +1007,13 @@ h4 {
 		font-weight: 500;
 		margin-bottom: 20px;
 	}
-
+	.item.apply {
+		.btn {
+			background-color: #f63;
+			color: #fff;
+			box-shadow: inset 3px 3px 6px 0 rgba(0, 0, 0, 0.16);
+		}
+	}
 	@include btn;
 
 }
@@ -1020,20 +1026,12 @@ h4 {
 	}
 
 	&.pick .text .name {
-		line-height: 2;
+		line-height: 1.5;
 		word-break: break-all;
 		white-space: normal;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 		display: -webkit-box;
-	}
-
-	.item.apply {
-		.btn {
-			background-color: #f63;
-			color: #fff;
-			box-shadow: inset 3px 3px 6px 0 rgba(0, 0, 0, 0.16);
-		}
 	}
 
 	.item.comple,
@@ -1204,6 +1202,7 @@ h4 {
 			font-size: 17px;
 			font-weight: bold;
 			line-height: 1.67;
+			line-height: 1.47;
 		}
 
 		.left {
@@ -2090,7 +2089,7 @@ h4 {
 
 
 .loginForm {
-	margin-top: 162px;
+	margin-top: 90px;
 	min-height: 500px;
 	text-align: center;
 	.inner {
