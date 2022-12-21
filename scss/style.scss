@@ -13,6 +13,14 @@ body {
 	min-width: 1100px;
 }
 
+@mixin scrollHide {
+	&::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
 @mixin masonry {
 	.masonry {
 		grid-template-columns: repeat(3, 1fr);
@@ -70,7 +78,7 @@ body {
 		border: 0;
 		border-bottom: 1px solid #151515;
 		outline: 0;
-
+		padding-left: 0;
 		&::placeholder {
 			color: #9a9a9a;
 		}
@@ -233,7 +241,7 @@ body {
 				@include ellipsis;
 				font-size: 24px;
 				font-weight: bold;
-				padding: 14px 60px 14px 10px;
+				padding: 14px 60px 14px 0px;
 				border-top: 1px solid #151515;
 				background: url(../img/acc_plus.svg) right top 15px/30px no-repeat;
 				min-height: 58px;
@@ -561,8 +569,7 @@ body {
 			background: url(../img/ic_reply.svg) left center no-repeat;
 			margin-left: 16px;
 			cursor: pointer;
-			&.ac,
-			&:hover {
+			&.ac {
 				background-image: url(../img/ic_reply_ac.svg);
 			}
 		}
@@ -1075,6 +1082,9 @@ h4 {
 
 .archivePage {
 	padding: 0;
+	.col-4 {
+		row-gap: 80px;
+	}
 
 	.thumbImg {
 		padding-top: 126%;
@@ -1083,6 +1093,10 @@ h4 {
 	&.pick .text {
 		margin-bottom: 0;
 	}
+	.tag {
+		margin-top: 9px;
+	}
+	@include tag;
 }
 
 
@@ -1378,7 +1392,7 @@ h4 {
 }
 
 .section-detail {
-	padding-top: 142px;
+	padding-top: 90px;
 
 	.inner {
 		display: flex;
@@ -1568,13 +1582,13 @@ h4 {
 			}
 
 			.cate {
-				font-size: 20px;
+				font-size: 16px;
 				font-weight: bold;
 				margin-bottom: 8px;
 			}
 
 			.desc {
-				font-size: 17px;
+				font-size: 14px;
 				font-weight: 500;
 				color: #656565;
 				margin-bottom: 12px;
@@ -1686,6 +1700,7 @@ h4 {
 		padding: 24px 15px;
 		vertical-align: top;
 		font-size: 16px;
+		line-height: 22px;
 		font-weight: 500;
 		position: relative;
 
@@ -1704,6 +1719,7 @@ h4 {
 
 			dd {
 				font-weight: 500;
+				cursor: pointer;
 			}
 		}
 		@include likeReply;
@@ -1761,8 +1777,9 @@ h4 {
 		.name {
 			font-size: 16px;
 			font-weight: bold;
-			line-height: 1.39;
+			line-height: 1.56;
 			@include lineClamp2;
+			cursor: pointer;
 		}
 
 		.badge {
@@ -1952,10 +1969,17 @@ h4 {
 		margin-top: 45px;
 		margin-bottom: 8px;
 		color: #f63;
-
+		.pickPerson {
+			font-weight: 500;
+		}
 		.pickPerson span {
 			font-size: 25px;
+			font-weight: bold;
 			margin-left: 16px;
+			&::after {
+				content: '명';
+				font-size: 17px;
+			}
 		}
 
 		.btn {
@@ -2119,6 +2143,8 @@ h4 {
 	@include btn;
 
 	.btn {
+		font-size: 18px;
+		font-weight: bold;
 		height: 50px;
 		margin-top: 23px;
 		margin-bottom: 6px;
@@ -3004,7 +3030,7 @@ h4 {
 
 // HEADER 반응형
 @media screen and (max-width:920px) {
-	$height:45px;
+	$height:55px;
 	.headerBack {
 		padding-top: $height !important;
 	}
@@ -3030,7 +3056,7 @@ h4 {
 			padding: 10px;
 			cursor: pointer;
 			span {
-				width: 23px;
+				width: 20px;
 				height: 3px;
 				background-color: #fff;
 				border-radius: 3px
@@ -3040,7 +3066,7 @@ h4 {
 			}
 		}
 		.logo img {
-			width: 140px;	
+			width: 180px;	
 		}
 		.mobileMenu {
 			&.ac {
@@ -3544,21 +3570,23 @@ h4 {
 
 		.leftNav {
 			width: 100%;
-			flex-basis: 220px;
+			flex-basis: 190px;
 			.modify {
 				margin-bottom: 35px;
 			}
 			ul {
-				margin-top: 55px;
+				margin-top: 45px;
 				display: flex;
 				gap: 20px;
-				overflow: auto;
+				overflow-x: auto;
 				width: 100vw;
 				margin-left: -($innerPadding);
 				margin-right: -($innerPadding);
 				padding-left: $innerPadding;
 				padding-right: $innerPadding;
 				box-sizing: border-box;
+				@include scrollHide;
+
 				li {
 					flex: 0 0 auto;
 				}
@@ -3603,6 +3631,16 @@ h4 {
 	.pageDetail .accodion .question .flexBx .btn {
 		flex: 1 0 100%;
 		height: 36px;
+	}
+	.pageDetail .topCon p {
+		font-size: 16px;
+	}
+	.pageDetail .control {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.pageDetail .reason {
+		text-align: center;
 	}
 }
 

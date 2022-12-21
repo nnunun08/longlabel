@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(./reset.css);
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
@@ -332,11 +333,37 @@ h4 {
 .archivePage {
   padding: 0;
 }
+.archivePage .col-4 {
+  row-gap: 80px;
+}
 .archivePage .thumbImg {
   padding-top: 126%;
 }
 .archivePage.pick .text {
   margin-bottom: 0;
+}
+.archivePage .tag {
+  margin-top: 9px;
+}
+.archivePage .tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.archivePage .tag span {
+  display: block;
+  font-size: 11px;
+  color: #000;
+  padding: 6px 10px;
+  border: 1px solid #151515;
+  border-radius: 40px;
+  box-sizing: border-box;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.archivePage .tag span:hover {
+  background: #f63;
+  color: #fff;
 }
 
 .mainArchive {
@@ -708,6 +735,7 @@ h4 {
   border: 0;
   border-bottom: 1px solid #151515;
   outline: 0;
+  padding-left: 0;
 }
 .countSearch .inner .search::-moz-placeholder {
   color: #9a9a9a;
@@ -742,7 +770,7 @@ h4 {
 }
 
 .section-detail {
-  padding-top: 142px;
+  padding-top: 90px;
 }
 .section-detail .inner {
   display: flex;
@@ -905,12 +933,12 @@ h4 {
      object-fit: cover;
 }
 .section-detail .container .followBrand .cate {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 .section-detail .container .followBrand .desc {
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
   color: #656565;
   margin-bottom: 12px;
@@ -1008,6 +1036,7 @@ h4 {
   padding: 24px 15px;
   vertical-align: top;
   font-size: 16px;
+  line-height: 22px;
   font-weight: 500;
   position: relative;
 }
@@ -1024,6 +1053,7 @@ h4 {
 }
 .table .body [class^=feed] dd {
   font-weight: 500;
+  cursor: pointer;
 }
 .table .body .data {
   position: absolute;
@@ -1052,7 +1082,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.table .body .data .reply.ac, .table .body .data .reply:hover {
+.table .body .data .reply.ac {
   background-image: url(../img/ic_reply_ac.svg);
 }
 
@@ -1112,7 +1142,7 @@ h4 {
 .storyCon .text .name {
   font-size: 16px;
   font-weight: bold;
-  line-height: 1.39;
+  line-height: 1.56;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -1120,6 +1150,7 @@ h4 {
   display: -webkit-box;
   white-space: normal;
   word-break: break-all;
+  cursor: pointer;
 }
 .storyCon .text .badge {
   position: absolute;
@@ -1279,7 +1310,7 @@ h4 {
   white-space: nowrap;
   font-size: 24px;
   font-weight: bold;
-  padding: 14px 60px 14px 10px;
+  padding: 14px 60px 14px 0px;
   border-top: 1px solid #151515;
   background: url(../img/acc_plus.svg) right top 15px/30px no-repeat;
   min-height: 58px;
@@ -1406,7 +1437,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.pageDetail .accodion .question .data .reply.ac, .pageDetail .accodion .question .data .reply:hover {
+.pageDetail .accodion .question .data .reply.ac {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .pageDetail .accodion .question + .question {
@@ -1723,9 +1754,17 @@ h4 {
   margin-bottom: 8px;
   color: #f63;
 }
+.pageDetail .control .pickPerson {
+  font-weight: 500;
+}
 .pageDetail .control .pickPerson span {
   font-size: 25px;
+  font-weight: bold;
   margin-left: 16px;
+}
+.pageDetail .control .pickPerson span::after {
+  content: "명";
+  font-size: 17px;
 }
 .pageDetail .control .btn {
   font-size: 17px;
@@ -1977,6 +2016,8 @@ h4 {
   color: #fff;
 }
 .loginForm .btn {
+  font-size: 18px;
+  font-weight: bold;
   height: 50px;
   margin-top: 23px;
   margin-bottom: 6px;
@@ -2354,7 +2395,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.talksList .data .reply.ac, .talksList .data .reply:hover {
+.talksList .data .reply.ac {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .talksList table {
@@ -2422,7 +2463,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.talksDetail .question .data .reply.ac, .talksDetail .question .data .reply:hover {
+.talksDetail .question .data .reply.ac {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .talksDetail .question + .question {
@@ -2898,7 +2939,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.storiesList .data .reply.ac, .storiesList .data .reply:hover {
+.storiesList .data .reply.ac {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .storiesList .item .cate {
@@ -3126,7 +3167,7 @@ h4 {
   white-space: nowrap;
   font-size: 24px;
   font-weight: bold;
-  padding: 14px 60px 14px 10px;
+  padding: 14px 60px 14px 0px;
   border-top: 1px solid #151515;
   background: url(../img/acc_plus.svg) right top 15px/30px no-repeat;
   min-height: 58px;
@@ -3253,7 +3294,7 @@ h4 {
   margin-left: 16px;
   cursor: pointer;
 }
-.about .accodion .question .data .reply.ac, .about .accodion .question .data .reply:hover {
+.about .accodion .question .data .reply.ac {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .about .accodion .question + .question {
@@ -3840,14 +3881,14 @@ h4 {
 
 @media screen and (max-width: 920px) {
   .headerBack {
-    padding-top: 45px !important;
+    padding-top: 55px !important;
   }
   .header.pc {
     display: none;
   }
   .header.mo {
     display: block;
-    height: 45px;
+    height: 55px;
   }
   .header.mo .inner {
     justify-content: center;
@@ -3865,7 +3906,7 @@ h4 {
     cursor: pointer;
   }
   .header.mo .menuBtn span {
-    width: 23px;
+    width: 20px;
     height: 3px;
     background-color: #fff;
     border-radius: 3px;
@@ -3874,7 +3915,7 @@ h4 {
     margin-top: 5px;
   }
   .header.mo .logo img {
-    width: 140px;
+    width: 180px;
   }
   .header.mo .mobileMenu {
     display: none;
@@ -4392,22 +4433,27 @@ h4 {
   }
   .section-detail .leftNav {
     width: 100%;
-    flex-basis: 220px;
+    flex-basis: 190px;
   }
   .section-detail .leftNav .modify {
     margin-bottom: 35px;
   }
   .section-detail .leftNav ul {
-    margin-top: 55px;
+    margin-top: 45px;
     display: flex;
     gap: 20px;
-    overflow: auto;
+    overflow-x: auto;
     width: 100vw;
     margin-left: -15px;
     margin-right: -15px;
     padding-left: 15px;
     padding-right: 15px;
     box-sizing: border-box;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .section-detail .leftNav ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
   }
   .section-detail .leftNav ul li {
     flex: 0 0 auto;
@@ -4449,6 +4495,16 @@ h4 {
   .pageDetail .accodion .question .flexBx .btn {
     flex: 1 0 100%;
     height: 36px;
+  }
+  .pageDetail .topCon p {
+    font-size: 16px;
+  }
+  .pageDetail .control {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pageDetail .reason {
+    text-align: center;
   }
 }
 @media screen and (max-width: 520px) {
