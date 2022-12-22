@@ -274,6 +274,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -671,6 +672,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1407,6 +1409,11 @@ h4 {
   font-size: 11px;
   font-weight: 500;
 }
+.pageDetail .accodion .realTopBtn {
+  margin-top: 20px;
+  height: 40px;
+  font-size: 16px;
+}
 .pageDetail .accodion .question {
   position: relative;
 }
@@ -1441,7 +1448,10 @@ h4 {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .pageDetail .accodion .question + .question {
-  margin-top: 20px;
+  border-top: 1px solid #151515;
+}
+.pageDetail .accodion .question.coment + .question {
+  border-top: 0;
 }
 .pageDetail .accodion .question .btn.apply {
   height: 40px;
@@ -1461,6 +1471,7 @@ h4 {
   clear: both;
 }
 .pageDetail .accodion .question .more {
+  cursor: pointer;
   height: 16px;
   line-height: 16px;
   font-size: 11px;
@@ -1473,8 +1484,15 @@ h4 {
 .pageDetail .accodion .question .data {
   bottom: 0;
 }
+.pageDetail .accodion .question.coment {
+  border-top: 0;
+  margin-top: 40px;
+}
 .pageDetail .accodion .question.coment .name {
   font-size: 14px;
+}
+.pageDetail .accodion .question.coment .btn {
+  margin: 0;
 }
 .pageDetail .accodion .question .inputText {
   position: relative;
@@ -1541,6 +1559,9 @@ h4 {
 .pageDetail .accodion .pagination li:last-child {
   border-bottom: initial;
 }
+.pageDetail .accodion .review {
+  padding-top: 20px;
+}
 .pageDetail .accodion .review .inputText {
   position: relative;
 }
@@ -1601,10 +1622,11 @@ h4 {
   outline: none;
 }
 .pageDetail .accodion .review + .review {
-  margin-top: 45px;
+  margin-top: 20px;
+  border-top: 1px solid #151515;
 }
 .pageDetail .accodion .review + .pagination {
-  margin-top: 62px;
+  margin-top: 70px;
 }
 .pageDetail .accodion .review .scoreStar {
   display: inline-block;
@@ -1662,6 +1684,7 @@ h4 {
 .pageDetail .accodion .review .inputMode .score {
   font-size: 25px;
   font-weight: 500;
+  margin-bottom: -7px;
 }
 .pageDetail .accodion .review .inputText textarea {
   padding-top: 42px;
@@ -1688,6 +1711,7 @@ h4 {
 }
 .pageDetail .accodion .review .reviewText dd {
   font-weight: 500;
+  cursor: pointer;
 }
 .pageDetail .accodion .review .thumbList {
   margin-top: 20px;
@@ -1697,6 +1721,21 @@ h4 {
   aspect-ratio: 1/1;
   border-radius: 10px;
   margin-right: 8px;
+  cursor: pointer;
+}
+.pageDetail .accodion .review .likeBx {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.pageDetail .accodion .review .likeBx .like {
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/ic_like.svg) center no-repeat;
 }
 .pageDetail .tag {
   display: flex;
@@ -1722,6 +1761,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1953,6 +1993,9 @@ h4 {
   font-weight: 500;
   line-height: 1.69;
 }
+.pageDetail .question + .pagination {
+  margin-top: 25px;
+}
 
 .loginForm {
   margin-top: 90px;
@@ -1975,6 +2018,7 @@ h4 {
   font-weight: 500;
   margin-bottom: 10px;
   margin-top: 10px;
+  line-height: 1.5;
 }
 .loginForm input {
   display: block;
@@ -2002,6 +2046,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2140,8 +2185,13 @@ h4 {
   font-weight: bold;
   color: #151515;
   text-align: left;
-  line-height: 1.4;
+  line-height: 1.57;
   overflow: scroll;
+}
+.loginForm .privacy p {
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
 }
 .loginForm.signupForm .btn {
   margin-top: 10px;
@@ -2178,6 +2228,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2467,7 +2518,10 @@ h4 {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .talksDetail .question + .question {
-  margin-top: 20px;
+  border-top: 1px solid #151515;
+}
+.talksDetail .question.coment + .question {
+  border-top: 0;
 }
 .talksDetail .question .btn.apply {
   height: 40px;
@@ -2487,6 +2541,7 @@ h4 {
   clear: both;
 }
 .talksDetail .question .more {
+  cursor: pointer;
   height: 16px;
   line-height: 16px;
   font-size: 11px;
@@ -2499,8 +2554,15 @@ h4 {
 .talksDetail .question .data {
   bottom: 0;
 }
+.talksDetail .question.coment {
+  border-top: 0;
+  margin-top: 40px;
+}
 .talksDetail .question.coment .name {
   font-size: 14px;
+}
+.talksDetail .question.coment .btn {
+  margin: 0;
 }
 .talksDetail .question .inputText {
   position: relative;
@@ -2657,6 +2719,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2752,6 +2815,7 @@ h4 {
 }
 .talksDetail .question + .question {
   margin-top: 20px;
+  border-top: 0;
 }
 
 .talksWrite {
@@ -2797,6 +2861,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2816,6 +2881,7 @@ h4 {
   margin-bottom: 54px;
 }
 .talksWrite select {
+  outline: 0;
   border: 0;
   font-size: 18px;
   font-weight: bold;
@@ -2887,6 +2953,7 @@ h4 {
      object-fit: cover;
 }
 .talksWrite .imgBx .img .remove {
+  padding: 0;
   position: absolute;
   right: -8px;
   top: -8px;
@@ -3096,6 +3163,20 @@ h4 {
   justify-content: space-between;
   align-items: center;
 }
+.storiesDetail .top .count {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+  color: #000;
+  margin-right: 10px;
+  margin-bottom: -5px;
+}
+.storiesDetail .top .likeBx.ac .count {
+  color: #f63;
+}
+.storiesDetail .top .likeBx.ac .like {
+  background: url(../img/ic_like_ac.svg) center/cover no-repeat;
+}
 .storiesDetail .top .like {
   display: block;
   width: 24px;
@@ -3264,6 +3345,11 @@ h4 {
   font-size: 11px;
   font-weight: 500;
 }
+.about .accodion .realTopBtn {
+  margin-top: 20px;
+  height: 40px;
+  font-size: 16px;
+}
 .about .accodion .question {
   position: relative;
 }
@@ -3298,7 +3384,10 @@ h4 {
   background-image: url(../img/ic_reply_ac.svg);
 }
 .about .accodion .question + .question {
-  margin-top: 20px;
+  border-top: 1px solid #151515;
+}
+.about .accodion .question.coment + .question {
+  border-top: 0;
 }
 .about .accodion .question .btn.apply {
   height: 40px;
@@ -3318,6 +3407,7 @@ h4 {
   clear: both;
 }
 .about .accodion .question .more {
+  cursor: pointer;
   height: 16px;
   line-height: 16px;
   font-size: 11px;
@@ -3330,8 +3420,15 @@ h4 {
 .about .accodion .question .data {
   bottom: 0;
 }
+.about .accodion .question.coment {
+  border-top: 0;
+  margin-top: 40px;
+}
 .about .accodion .question.coment .name {
   font-size: 14px;
+}
+.about .accodion .question.coment .btn {
+  margin: 0;
 }
 .about .accodion .question .inputText {
   position: relative;
@@ -3398,6 +3495,9 @@ h4 {
 .about .accodion .pagination li:last-child {
   border-bottom: initial;
 }
+.about .accodion .review {
+  padding-top: 20px;
+}
 .about .accodion .review .inputText {
   position: relative;
 }
@@ -3458,10 +3558,11 @@ h4 {
   outline: none;
 }
 .about .accodion .review + .review {
-  margin-top: 45px;
+  margin-top: 20px;
+  border-top: 1px solid #151515;
 }
 .about .accodion .review + .pagination {
-  margin-top: 62px;
+  margin-top: 70px;
 }
 .about .accodion .review .scoreStar {
   display: inline-block;
@@ -3519,6 +3620,7 @@ h4 {
 .about .accodion .review .inputMode .score {
   font-size: 25px;
   font-weight: 500;
+  margin-bottom: -7px;
 }
 .about .accodion .review .inputText textarea {
   padding-top: 42px;
@@ -3545,6 +3647,7 @@ h4 {
 }
 .about .accodion .review .reviewText dd {
   font-weight: 500;
+  cursor: pointer;
 }
 .about .accodion .review .thumbList {
   margin-top: 20px;
@@ -3554,6 +3657,21 @@ h4 {
   aspect-ratio: 1/1;
   border-radius: 10px;
   margin-right: 8px;
+  cursor: pointer;
+}
+.about .accodion .review .likeBx {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.about .accodion .review .likeBx .like {
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/ic_like.svg) center no-repeat;
 }
 .about .inner {
   display: flex;
@@ -3657,7 +3775,7 @@ h4 {
 .about .contents .accodion li .conWrap .mission .text {
   font-size: 20px;
   font-weight: bold;
-  line-height: 2.4;
+  line-height: 1.75;
 }
 .about .contents .accodion li .conWrap .mission .mark {
   margin-top: 19px;
@@ -3829,6 +3947,7 @@ h4 {
   height: 36px;
   width: 100%;
   border: 1px solid #f63;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4264,6 +4383,7 @@ h4 {
     height: 36px;
     width: 100%;
     border: 1px solid #f63;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4324,13 +4444,25 @@ h4 {
     width: calc((100% - 10px) / 2);
   }
   .pageTab .inner ul {
+    overflow-y: visible;
     overflow-x: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .pageTab .inner ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
   }
   .pageTab .inner ul li {
     flex: 0 0 auto;
   }
+  .pageTab .inner ul li + li {
+    margin-left: 30px;
+  }
   .pageTab .inner ul li:last-child {
     margin-right: 20px;
+  }
+  .pageTab .inner ul li.ac::after {
+    bottom: -12px;
   }
   .col-4 {
     gap: 20px 10px;
@@ -4433,10 +4565,10 @@ h4 {
   }
   .section-detail .leftNav {
     width: 100%;
-    flex-basis: 190px;
+    flex-basis: 160px;
   }
   .section-detail .leftNav .modify {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
   }
   .section-detail .leftNav ul {
     margin-top: 45px;
@@ -4506,6 +4638,73 @@ h4 {
   .pageDetail .reason {
     text-align: center;
   }
+  .pageTab {
+    padding-top: 30px;
+  }
+  .pageTab ul li {
+    font-size: 14px;
+  }
+  .storiesDetail {
+    margin-top: 30px;
+  }
+  .about {
+    margin-top: 80px;
+  }
+  .about .contents .accodion li .item {
+    width: 100%;
+  }
+  .section-detail {
+    padding-top: 50px;
+  }
+  .PageEdit .container {
+    max-width: 100%;
+  }
+  .PageEdit .inputWrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .PageEdit .inputWrap .account.label,
+.PageEdit .inputWrap .label {
+    flex-basis: 30px;
+  }
+  .PageEdit .inputWrap .rightCon {
+    flex: 0 0 30px;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+  .PageEdit .inputWrap .account.readonly,
+.PageEdit .inputWrap .alignLeft {
+    flex: 1 0 60px;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    text-align: left;
+  }
+  .PageEdit .inputWrap.mt-10 .label {
+    display: none;
+  }
+  .PageEdit .inputWrap .radioWrap {
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .PageEdit .select {
+    width: 100%;
+  }
+  .storiesList .item .data {
+    right: auto;
+    left: 12px;
+    bottom: 12px;
+  }
+  .storiesList .item .name {
+    font-size: 16px;
+  }
+  .storiesList .item .textBx {
+    padding: 12px;
+    padding-bottom: 40px;
+  }
 }
 @media screen and (max-width: 520px) {
   .section-detail .storyCon.col-3 {
@@ -4520,5 +4719,35 @@ h4 {
   }
   .section-detail .container .followBrand > .item {
     width: calc((100% - 30px) / 2);
+  }
+  .loginForm h2 {
+    margin-bottom: 60px;
+  }
+  .loginForm.signupForm .btn {
+    margin-bottom: 120px;
+  }
+  .loginForm .inputWrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .loginForm .inputWrap .label {
+    flex-basis: 30px;
+  }
+  .loginForm .inputWrap.mt-10 .label {
+    display: none;
+  }
+  .loginForm.signupForm .readonly {
+    padding-left: 0;
+    flex-basis: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .loginForm .inputWrap .radioWrap {
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+  .loginForm .select {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

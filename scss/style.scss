@@ -338,7 +338,11 @@ body {
 			font-size: 11px;
 			font-weight: 500;
 		}
-
+		.realTopBtn {
+			margin-top: 20px;
+			height: 40px;
+			font-size: 16px
+		}
 		
 		@include question;
 		.pagination {
@@ -354,13 +358,15 @@ body {
 		}
 
 		.review {
+			padding-top: 20px;
 			@include inputArea;
 			@include textarea;
 			& + .review {
-				margin-top: 45px;
+				margin-top: 20px;
+				border-top: 1px solid #151515;
 			}
 			& + .pagination {
-				margin-top: 62px;
+				margin-top: 70px;
 			}
 			.scoreStar {
 				display: inline-block;
@@ -407,6 +413,7 @@ body {
 				.score {
 					font-size: 25px;
 					font-weight: 500;
+					margin-bottom: -7px;
 				}
 			}
 			.inputText textarea {
@@ -434,6 +441,7 @@ body {
 				}
 				dd {
 					font-weight: 500;
+					cursor: pointer;
 				}
 			}
 			.thumbList {
@@ -443,6 +451,21 @@ body {
 					aspect-ratio: 1/1;
 					border-radius: 10px;
 					margin-right: 8px;
+					cursor: pointer;
+				}
+			}
+			.likeBx {
+				display: flex;
+				align-items: flex-end;
+				gap: 10px;
+				font-size: 13px;
+				font-weight: 500;
+				.like {
+					cursor: pointer;
+					display: inline-block;
+					width: 16px;
+					height: 16px;
+					background: url(../img/ic_like.svg) center no-repeat;
 				}
 			}
 		}
@@ -640,10 +663,14 @@ body {
 
 @mixin question {
 	.question {
+		// padding-top: 20px;
 		@include likeReply;
 		position: relative;
 		& + .question {
-			margin-top: 20px;
+			border-top: 1px solid #151515;
+		}
+		&.coment + .question {
+			border-top: 0;
 		}
 
 		.btn.apply {
@@ -665,6 +692,7 @@ body {
 			}
 		}
 		.more {
+			cursor: pointer;
 			height:16px;
 			line-height: 16px;
 			font-size: 11px;
@@ -678,8 +706,13 @@ body {
 			bottom: 0;
 		}
 		&.coment {
+			border-top: 0;
+			margin-top: 40px;
 			.name {
 				font-size: 14px;
+			}
+			.btn {
+				margin: 0
 			}
 		}
 		@include inputArea;
@@ -962,6 +995,7 @@ h4 {
 		height: 36px;
 		width: 100%;
 		border: 1px solid #f63;
+		box-sizing: border-box;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -2109,6 +2143,10 @@ h4 {
 		font-weight: 500;
 		line-height: 1.69;
 	}
+
+	.question + .pagination {
+		margin-top: 25px;
+	}
 }
 
 
@@ -2133,6 +2171,7 @@ h4 {
 		font-weight: 500;
 		margin-bottom: 10px;
 		margin-top: 10px;
+		line-height: 1.5;
 	}
 	@include input;
 
@@ -2203,8 +2242,13 @@ h4 {
 		font-weight: bold;
 		color: #151515;
 		text-align: left;
-		line-height: 1.4;
+		line-height: 1.57;
 		overflow: scroll;
+		p {
+			margin: 10px 0;
+			font-size: 14px;
+  			font-weight: 500;
+		}
 	}
 
 	&.signupForm {
@@ -2554,6 +2598,7 @@ h4 {
 		}
 		& + .question {
 			margin-top: 20px;
+			border-top: 0
 		}
 	}
 }
@@ -2571,6 +2616,7 @@ h4 {
 		margin-bottom: 54px;
 	}
 	select {
+		outline: 0;
 		border: 0;
 		font-size: 18px;
 		font-weight: bold;
@@ -2639,6 +2685,7 @@ h4 {
 				object-fit: cover;
 			}
 			.remove {
+				padding: 0;
 				position: absolute;
 				right: -8px;
 				top: -8px;
@@ -2763,6 +2810,22 @@ h4 {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+		}
+		.count {
+			font-size: 14px;
+			font-weight: 500;
+			text-align: right;
+			color: #000;
+			margin-right: 10px;
+			margin-bottom: -5px;
+		}
+		.likeBx.ac {
+			.count {
+				color: #f63;
+			}
+			.like {
+				background: url(../img/ic_like_ac.svg) center/cover no-repeat;
+			}
 		}
 		.like {
 			display:block;
@@ -2925,7 +2988,7 @@ h4 {
 						.text {
 							font-size: 20px;
 							font-weight: bold;
-							line-height: 2.4;						  
+							line-height: 1.75;						  
 						}
 						.mark {
 							margin-top: 19px;
@@ -3437,12 +3500,20 @@ h4 {
 
 	.pageTab .inner {
 		ul {
+			overflow-y: visible;
 			overflow-x: auto;
+			@include scrollHide;
 			li {
 				flex: 0 0 auto;
+				& + li {
+					margin-left: 30px;
+				}
 			}
 			li:last-child {
 				margin-right: 20px;
+			}
+			li.ac::after {
+				bottom: -12px;
 			}
 		} 
 		
@@ -3570,9 +3641,9 @@ h4 {
 
 		.leftNav {
 			width: 100%;
-			flex-basis: 190px;
+			flex-basis: 160px;
 			.modify {
-				margin-bottom: 35px;
+				margin-bottom: 20px;
 			}
 			ul {
 				margin-top: 45px;
@@ -3642,6 +3713,77 @@ h4 {
 	.pageDetail .reason {
 		text-align: center;
 	}
+
+	.pageTab {
+		padding-top: 30px;
+		ul li {
+			font-size: 14px;
+		}
+	}
+	.storiesDetail {
+		margin-top: 30px;
+	}
+	.about {
+		margin-top: 80px;
+	}
+
+	.about .contents .accodion li .item {
+		width: 100%;
+	}
+
+	.section-detail {
+		padding-top: 50px;
+	}
+
+	.PageEdit .container {
+		max-width: 100%;
+	}
+	.PageEdit .inputWrap {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.PageEdit .inputWrap .account.label,
+	.PageEdit .inputWrap .label {
+		flex-basis: 30px;
+	}
+	.PageEdit .inputWrap .rightCon {
+		flex: 0 0 30px;
+		flex-direction: column;
+		width: 100%;
+		align-items: flex-start;
+		margin-top: 16px;
+	}
+	.PageEdit .inputWrap .account.readonly,
+	.PageEdit .inputWrap .alignLeft {
+		flex: 1 0 60px;
+		display: flex;
+		padding: 0;
+		align-items: center;
+		text-align: left;
+	}
+	.PageEdit .inputWrap.mt-10 .label {
+		display: none;
+	}
+	.PageEdit .inputWrap .radioWrap {
+		height: 60px;
+		display: flex;
+		align-items: center;
+	}
+	.PageEdit .select {
+		width:100%;
+	}
+	.storiesList .item .data {
+		right:auto;
+		left: 12px;
+		bottom:	12px;
+	}
+	.storiesList .item .name {
+		font-size: 16px;
+	}
+	.storiesList .item .textBx {
+		padding: 12px;
+		padding-bottom: 40px;
+	}
 }
 
 @media screen and (max-width:520px) {
@@ -3657,5 +3799,36 @@ h4 {
 		> .item {
 			width: calc(((100% - 30px) / 2));
 		}
+	}
+
+	.loginForm h2 {
+		margin-bottom: 60px;
+	}
+	.loginForm.signupForm .btn {
+		margin-bottom: 120px;
+	}
+	.loginForm .inputWrap {
+		flex-direction: column;
+		align-items: flex-start;
+		.label {
+			flex-basis: 30px;
+		}
+		&.mt-10 .label {
+			display: none;
+		}
+	}
+	.loginForm.signupForm .readonly {
+		padding-left: 0;
+		flex-basis: 60px;
+		display: flex;
+		align-items: center;
+	}
+	.loginForm .inputWrap .radioWrap {
+		display: flex;
+		align-items: center;
+		height: 60px;
+	}
+	.loginForm .select {
+		width: 100%;
 	}
 }

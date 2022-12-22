@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="headerWrap">
+        <div class="header pc">
+            <div class="inner">
+                <div class="logo">
+                    <img src="./img/logo.svg" alt="logo">
+                </div>
+                <ul>
+                    <li class="ac">Pick</li>
+                    <li>Archive</li>
+                    <li>Talks</li>
+                    <li>Stories</li>
+                    <li>About</li>
+                </ul>
+                <div class="rightBtn">
+                    <span>Connects</span>
+                    <div class="user">
+                        <span>로그인</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header mo">
+            <div class="inner">
+                <div class="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <img src="./img/logo.svg" alt="logo">
+                </div>
+            </div>
+
+            <!-- .menuBtn 클릭이벤트 시 mobileMenu요소에 .ac 토글(숨김/노출) -->
+            <div class="mobileMenu">
+                <div class="panel">
+                    <div class="top">
+                        <div class="backArr"></div>
+                        <div class="flexBx">
+                            
+                            <div>
+                                <div class="user">
+                                    <span>로그인해 주세요</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menuList">
+                        <ul>
+                            <li>Pick</li>
+                            <li>Archive</li>
+                            <li>Talks</li>
+                            <li>Stories</li>
+                            <li>About</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dim"></div>
+            </div>
+
+            <!-- 모바일 메뉴 토글 -->
+            <script>
+                const body = document.querySelector('body')
+                const menuOpen = document.querySelector('.header .menuBtn')
+                const menuClose = document.querySelector('.header .backArr')
+                const target = document.querySelector('.header .mobileMenu')
+                const dim = document.querySelector('.header .dim')
+                menuOpen.addEventListener('click', function() {
+                    target.classList.add('ac')
+                    body.classList.add('modalOn')
+                })
+                menuClose.addEventListener('click', function() {
+                    target.classList.remove('ac')
+                    body.classList.remove('modalOn')
+                })
+                dim.addEventListener('click', function() {
+                    target.classList.remove('ac')
+                    body.classList.remove('modalOn')
+                })
+            </script>
+        </div>
+
+        <div class="headerBack"></div>
+    </div>
+
+    <div class="pageDetail">
+        <div class="inner">
+            <div class="backPage">목록으로 돌아가기</div>
+
+            <div class="topCon col-2">
+                <div class="item">
+                    <div class="imgSlide">
+                        <div>
+                            <div class="imgWrap">
+                                <img src="./img/resource/pickDetail.png" alt="img">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="imgWrap">
+                                <img src="./img/resource/pickDetail.png" alt="img">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="imgWrap">
+                                <img src="./img/resource/pickDetail.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Women’s Woolyester Pile Bomber Jacket</h2>
+                    <p>
+                        파타고니아의 특징이 잘 보이는 보머 재킷이에요.<br>
+                        전면을 스냅 단추로 여미는 항공 재킷 스타일입니다.<br>
+                        리사이클울, 리사이클폴리에스터 혼방 원단인 하이 파일 플리스
+                        소재를&nbsp;사용했다고 해요.
+                    </p>
+
+                    <div class="accodion">
+                        <ul>
+                            <li class="disAcc">
+                                <div class="list">키워드</div>
+                                <div class="tag">
+                                    <span>리사이클 폴리에스터</span>
+                                    <span>리사이클 울</span>
+                                    <span>유기농 순면</span>
+                                    <span>공정무역</span>
+                                </div>
+                            </li>
+                            <!-- li에 .ac 클래스 토글에 따라 display : block or none -->
+                            <li class="">
+                                <div class="list">브랜드</div>
+                                
+                            </li>
+                            <li class="">
+                                <div class="list">제품 특징</div>
+                                
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn btn-50">
+                        구매하기
+                    </div>
+                </div>
+
+                <div class="item accodion">
+                    <ul>
+                        <!-- 리얼체크 -->
+                        <li class="">
+                            <div class="list">리얼체크</div>
+                        </li>
+
+                        <!-- 리얼질문 -->
+                        <li class="ac">
+                            <div class="list">리얼질문 <span class="count">47</span></div>
+
+                            <div class="question coment">
+                                <div class="flexBx">
+                                    <div class="name">닉네임</div>
+                                    <div class="date">2022.09.01</div>
+                                </div>
+                                <div class="">
+                                    <div class="inputText">
+                                        <textarea class="textarea" placeholder="내용을 입력해주세요"></textarea>
+                                        <div class="counter">0 / 1,000</div>
+                                    </div>
+                                    <div class="btn">
+                                        등록하기
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 리얼리뷰 -->
+                        <li class="">
+                            <div class="list">리얼리뷰 <span class="star">4.7</span><span class="count">(473)</span></div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="inner">
+            <div class="topCon">
+                <img class="footerLogo" src="./img/footerLogo.svg" alt="footerLogo">
+                <ul>
+                    <li>이용약관</li>
+                    <li>개인정보처리방침</li>
+                </ul>
+            </div>
+            <div class="bodyCon">
+                <p>
+                    <span>상호명&nbsp;:&nbsp;리마인드얼스</span>  |  <span>대표자&nbsp;:&nbsp;김혜림</span>  |   <span>사업자번호&nbsp;:&nbsp;645-06-01901</span>  |  <span>주소&nbsp;:&nbsp;서울특별시&nbsp;종로구&nbsp;종로&nbsp;34&nbsp;2층&nbsp;101호</span><br>
+                    <span>통신판매업신고번호&nbsp;:&nbsp;2022-지역명-1234</span>  |  <span>입금계좌&nbsp;:&nbsp;국민은행&nbsp;123456678</span>  |  <span>문의&nbsp;:&nbsp;02-123-1234</span>  |  <span>메일&nbsp;:&nbsp;hello@emindearth.com</span><br>
+                    롱레이블은 리마인드얼스가 운영하는 친환경 제품 임팩트 분석 플랫폼입니다.
+                </p>
+                <img class="insta" src="./img/ic_instagram.svg" alt="ic_instagram">
+            </div>
+            <span class="copyright">COPYRIGHT ⓒ LONG LABEL. All Rights Reserved.</span>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script>
+        $('.imgSlide').slick(
+            {
+                dots: true,
+                infinite: true,
+            }
+        );
+    </script>
+</body>
+</html>
