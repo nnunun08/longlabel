@@ -67,6 +67,7 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  -webkit-border-radius: 0;
   border-radius: 0;
 }
 
@@ -81,4 +82,6 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}/*# sourceMappingURL=reset.css.map */
+}
+
+/*# sourceMappingURL=reset.css.map */
