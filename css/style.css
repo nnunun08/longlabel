@@ -3837,23 +3837,64 @@ h4 {
 
 .page404 {
   text-align: center;
-  padding-top: 222px;
+  padding-top: 195px;
   color: #151515;
+}
+.page404 .btn {
+  height: 36px;
+  width: 100%;
+  border: 1px solid #f63;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f63;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.page404 .btn.ac, .page404 .btn:hover {
+  background-color: #f63;
+  color: #fff;
 }
 .page404 .logo {
   width: 80%;
-  max-width: 520px;
+  max-width: 349px;
 }
-.page404 h2 {
-  margin-top: 170px;
-  margin-bottom: 20px;
-  font-size: 28px;
-  font-weight: bold;
+.page404 .search-bg {
+  max-width: 500px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: -70px;
+}
+.page404 .search-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: url(../img/bg_search.png) center/cover no-repeat;
+  transform: translateX(10%);
+  z-index: -1;
 }
 .page404 p {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.56;
+  color: #151515;
+}
+.page404 .btn {
+  margin: 0 auto;
+  margin-top: 28px;
+  max-width: 340px;
+  font-size: 18px;
+  height: 50px;
+  margin-bottom: 177px;
 }
 
 .PageEdit input {
@@ -4790,6 +4831,9 @@ h4 {
   }
   .loginForm .select {
     width: 100%;
+  }
+  .page404 .search-bg {
+    margin-bottom: -20px;
   }
 }
 
