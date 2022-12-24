@@ -13,6 +13,35 @@ body {
 	min-width: 1100px;
 }
 
+@mixin storiesItem {
+	.item {
+		.cate {
+			font-size: 15px;
+			font-weight: 500;
+			color: #f63;
+		}
+		.name {
+			font-size: 18px;
+			  font-weight: bold;
+			line-height: 1.56;
+			margin-top: 10px;
+		}
+		.textBx {
+			background: #f5f5f5;
+			border: 1px solid #151515;
+			box-sizing: border-box;
+			border-top: 0;
+			padding: 20px;
+			padding-bottom: 50px;
+			position: relative;
+		}
+		.data {
+			right: 25px;
+			bottom: 22px;
+		}
+	}
+}
+
 @mixin scrollHide {
 	&::-webkit-scrollbar {
 		display: none; /* Chrome, Safari, Opera*/
@@ -477,7 +506,7 @@ body {
 			background: url(../img/bg_reply_arr.svg) left top no-repeat;
 			padding-left: 27px;
 			.left {
-				gap: 10px;
+				gap: 10px !important;
 			}
 			.like {
 				font-size: 12px;
@@ -604,11 +633,13 @@ body {
 
 @mixin likeReply {
 	.data {
-		position: absolute;
-		right: 0;
-		bottom: 10px;
+		// position: absolute;
+		// right: 0;
+		// bottom: 10px;
 		display: flex;
 		align-items: center;
+		justify-content: flex-end;
+		flex: 1 0 auto;
 		font-size: 11px;
 		font-weight: 500;
 
@@ -703,6 +734,9 @@ body {
 @mixin question {
 	.question {
 		// padding-top: 20px;
+		& + .recomentWrap {
+			display: none
+		}
 		@include likeReply;
 		position: relative;
 		& + .question {
@@ -768,6 +802,14 @@ body {
 				height: $height;
 				margin: 0;
 			}
+		}
+	}
+	.question.ac {
+		.more {
+			display: none;
+		}
+		& + .recomentWrap {
+			display: block
 		}
 	}
 }
@@ -1320,6 +1362,72 @@ h4 {
 				// height: 165px;
 				aspect-ratio: 186/140;
 				margin-right: 20px;
+			}
+		}
+	}
+}
+
+// MOBILE 버전 => PC에도 적용
+.mainStories {
+	$innerPadding:15px;
+	position: relative;
+	.bodyWrap {
+		.left,
+		.right {
+			display: none;
+		}
+		.masonryWrap {
+			display: block;
+			// position: relative;
+			padding-bottom: 0px;
+			@include masonry;
+			@include masonryMobile;
+			.masonry {
+				@include storiesItem;
+				display: block;
+				grid-template-columns:repeat(4, 1fr);
+				gap: 0 20px;
+				> .item {
+					width: calc((100% - 60px) / 4);
+				}
+				.textBx {
+					padding: 10px !important;
+					.cate {
+						font-size: 10px;
+						margin: 0;
+					}
+					.name {
+						font-size: 13px;
+						margin-top: 5px;
+						line-height: 1.31;
+						@include lineClamp2;
+					}
+				}
+			}
+
+			.masoryMore {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -60px;
+				width: 100vw;
+				// margin-left: -($innerPadding);
+				// margin-right: -($innerPadding);
+				height: 192px;
+				background-image: url(../img/bg_blur.png);
+				background-repeat: repeat;
+				background-size: 1px 100%;
+				text-align: center;
+				padding-top: 74px;
+				box-sizing: border-box;
+				@include btn;
+				.moreBtn {
+					font-size: 11px;
+					width: 160px;
+					height: 27px;
+					border-radius: 100px;
+					margin: 0 auto;
+				}
 			}
 		}
 	}
@@ -2738,34 +2846,7 @@ h4 {
 		}
 	}
 }
-@mixin storiesItem {
-	.item {
-		.cate {
-			font-size: 15px;
-			font-weight: 500;
-			color: #f63;
-		}
-		.name {
-			font-size: 18px;
-			  font-weight: bold;
-			line-height: 1.56;
-			margin-top: 10px;
-		}
-		.textBx {
-			background: #f5f5f5;
-			border: 1px solid #151515;
-			box-sizing: border-box;
-			border-top: 0;
-			padding: 20px;
-			padding-bottom: 50px;
-			position: relative;
-		}
-		.data {
-			right: 25px;
-			bottom: 22px;
-		}
-	}
-}
+
 .storiesList {
 	@include imgWrap;
 	@include likeReply;
@@ -3061,6 +3142,7 @@ h4 {
 	text-align: center;
 	padding-top: 195px;
 	color: #151515;
+	overflow: hidden;
 	.logo {
 		width: 80%;
 		max-width: 349px;
@@ -3334,54 +3416,55 @@ h4 {
 		}
 	}
 
-	.mainBanner {
-		display: none;
-	}
-	.mainBannerMobile {
-		position: relative;
-		display: block;
-		.slick-arrow {
-			display: none !important;
-		}
-		.item {
-			padding-top: 115px;
-			height: 480px;
-			display: flex;
-			align-items: flex-start;
-			overflow: hidden;
-			box-sizing: border-box;
-			img {
-				width: 100%;
-			}
-		}
-		.slick-dots {
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 67px;
-			margin: 0 auto;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			li.slick-active button {
-				opacity: 1;
-			}
-			li button {
-				display: block;
-				width: 5px;
-				height: 5px;
-				border: 0;
-				border-radius: 50%;
-				background-color: #fff;
-				opacity: 0.3;
-				text-indent: -9999px;
-				padding: 0;
-			}
-			li + li {
-				margin-left: 5px;
-			}
-		}
-	}
+	// 메인배너수정
+	// .mainBanner {
+	// 	display: none;
+	// }
+	// .mainBannerMobile {
+	// 	position: relative;
+	// 	// display: block;
+	// 	.slick-arrow {
+	// 		display: none !important;
+	// 	}
+	// 	.item {
+	// 		padding-top: 115px;
+	// 		height: 480px;
+	// 		display: flex;
+	// 		align-items: flex-start;
+	// 		overflow: hidden;
+	// 		box-sizing: border-box;
+	// 		img {
+	// 			width: 100%;
+	// 		}
+	// 	}
+	// 	.slick-dots {
+	// 		position: absolute;
+	// 		left: 0;
+	// 		right: 0;
+	// 		bottom: 67px;
+	// 		margin: 0 auto;
+	// 		display: flex;
+	// 		justify-content: center;
+	// 		align-items: center;
+	// 		li.slick-active button {
+	// 			opacity: 1;
+	// 		}
+	// 		li button {
+	// 			display: block;
+	// 			width: 5px;
+	// 			height: 5px;
+	// 			border: 0;
+	// 			border-radius: 50%;
+	// 			background-color: #fff;
+	// 			opacity: 0.3;
+	// 			text-indent: -9999px;
+	// 			padding: 0;
+	// 		}
+	// 		li + li {
+	// 			margin-left: 5px;
+	// 		}
+	// 	}
+	// }
 	.pick,
 	.mainArchive,
 	.mainStories {
@@ -3405,15 +3488,16 @@ h4 {
 		.col-3 {
 			gap: 10px;
 			flex-wrap: nowrap;
+			flex-wrap: wrap;
 			overflow: auto;
 			margin-left: -($innerPadding);
 			margin-right: -($innerPadding);
 			padding: 0 $innerPadding;
 			> .item {
-				// width: calc((100% - 10px) / 2);
-				width: 41%;
-				min-width: 160px;
-				flex: 0 0 auto;
+				width: calc((100% - 10px) / 2);
+				// width: 41%;
+				// min-width: 160px;
+				// flex: 0 0 auto;
 			}
 			// > .item:nth-child(2) ~ .item {
 			// 	display: none;
@@ -3425,6 +3509,7 @@ h4 {
 		.col-4 {
 			gap: 10px;
 			flex-wrap: nowrap;
+			flex-wrap: wrap;
 			overflow: auto;
 			margin-left: -($innerPadding);
 			margin-right: -($innerPadding);
@@ -3432,9 +3517,10 @@ h4 {
 			.item {
 				transform: rotate(0) !important;
 				margin-top: 0 !important;
-				width: 62.8%;
-				min-width: 245px;
-				flex: 0 0 auto;
+				// width: 62.8%;
+				// min-width: 245px;
+				// flex: 0 0 auto;
+				width: calc((100% - 10px) / 2);
 				.thumbImg {
 					margin-bottom: 10px;
 				}
@@ -3454,67 +3540,16 @@ h4 {
 			}		
 		}
 	}
-	.mainStories {
-		.bodyWrap {
-			.left,
-			.right {
-				display: none;
-			}
-			.mobile {
-				display: block;
-				position: relative;
-				padding-bottom: 0px;
-				@include masonry;
-				@include masonryMobile;
-				.masonry {
-					@include storiesItem;
-					display: block;
-					> .item {
-						width: calc((100% - 10px) / 2);
-					}
-					.textBx {
-						padding: 10px !important;
-						.cate {
-							font-size: 10px;
-							margin: 0;
-						}
-						.name {
-							font-size: 13px;
-							margin-top: 5px;
-							line-height: 1.31;
-							@include lineClamp2;
-						}
-					}
-				}
 
-				.masoryMore {
-					position: absolute;
-					left: 0;
-					right: 0;
-					bottom: -60px;
-					width: 100vw;
-					margin-left: -($innerPadding);
-					margin-right: -($innerPadding);
-					height: 192px;
-					background-image: url(../img/bg_blur.png);
-					background-repeat: repeat;
-					background-size: 1px 100%;
-					text-align: center;
-					padding-top: 74px;
-					box-sizing: border-box;
-					@include btn;
-					.moreBtn {
-						font-size: 11px;
-						width: 160px;
-						height: 27px;
-						border-radius: 100px;
-						margin: 0 auto;
-					}
-				}
+	.mainStories {
+		.bodyWrap .masonryWrap .masonry {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 0 10px;
+			> .item {
+				width :calc((100% - 10px) / 2)
 			}
 		}
 	}
-
 
 	.footer {
 		position: relative;
@@ -3550,6 +3585,7 @@ h4 {
 			font-size: 11px;
 		}
 	}
+
 	.storiesList {
 		@include masonryMobile;
 		// .masonry {

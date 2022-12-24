@@ -569,6 +569,134 @@ h4 {
   margin-right: 20px;
 }
 
+.mainStories {
+  position: relative;
+}
+.mainStories .bodyWrap .left,
+.mainStories .bodyWrap .right {
+  display: none;
+}
+.mainStories .bodyWrap .masonryWrap {
+  display: block;
+  padding-bottom: 0px;
+}
+.mainStories .bodyWrap .masonryWrap .masonry {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 20px;
+}
+.mainStories .bodyWrap .masonryWrap .masonry > .item {
+  width: calc((100% - 40px) / 3);
+  height: auto;
+}
+.mainStories .bodyWrap .masonryWrap .masonry > .item .imgWrap {
+  width: 100%;
+  height: auto;
+  aspect-ratio: initial;
+  cursor: pointer;
+}
+.mainStories .bodyWrap .masonryWrap .masonry > .item .imgWrap img {
+  position: static;
+  display: block;
+  height: auto;
+}
+.mainStories .bodyWrap .masonryWrap .masonry {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 10px;
+}
+.mainStories .bodyWrap .masonryWrap .masonry > .item {
+  width: calc((100% - 10px) / 2);
+}
+.mainStories .bodyWrap .masonryWrap .masonry {
+  display: block;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 20px;
+}
+.mainStories .bodyWrap .masonryWrap .masonry .item .cate {
+  font-size: 15px;
+  font-weight: 500;
+  color: #f63;
+}
+.mainStories .bodyWrap .masonryWrap .masonry .item .name {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.56;
+  margin-top: 10px;
+}
+.mainStories .bodyWrap .masonryWrap .masonry .item .textBx {
+  background: #f5f5f5;
+  border: 1px solid #151515;
+  box-sizing: border-box;
+  border-top: 0;
+  padding: 20px;
+  padding-bottom: 50px;
+  position: relative;
+}
+.mainStories .bodyWrap .masonryWrap .masonry .item .data {
+  right: 25px;
+  bottom: 22px;
+}
+.mainStories .bodyWrap .masonryWrap .masonry > .item {
+  width: calc((100% - 60px) / 4);
+}
+.mainStories .bodyWrap .masonryWrap .masonry .textBx {
+  padding: 10px !important;
+}
+.mainStories .bodyWrap .masonryWrap .masonry .textBx .cate {
+  font-size: 10px;
+  margin: 0;
+}
+.mainStories .bodyWrap .masonryWrap .masonry .textBx .name {
+  font-size: 13px;
+  margin-top: 5px;
+  line-height: 1.31;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  white-space: normal;
+  word-break: break-all;
+}
+.mainStories .bodyWrap .masonryWrap .masoryMore {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -60px;
+  width: 100vw;
+  height: 192px;
+  background-image: url(../img/bg_blur.png);
+  background-repeat: repeat;
+  background-size: 1px 100%;
+  text-align: center;
+  padding-top: 74px;
+  box-sizing: border-box;
+}
+.mainStories .bodyWrap .masonryWrap .masoryMore .btn {
+  height: 36px;
+  width: 100%;
+  border: 1px solid #f63;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f63;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.mainStories .bodyWrap .masonryWrap .masoryMore .btn.ac, .mainStories .bodyWrap .masonryWrap .masoryMore .btn:hover {
+  background-color: #f63;
+  color: #fff;
+}
+.mainStories .bodyWrap .masonryWrap .masoryMore .moreBtn {
+  font-size: 11px;
+  width: 160px;
+  height: 27px;
+  border-radius: 100px;
+  margin: 0 auto;
+}
+
 .footer {
   margin-top: 93px;
   border-top: 1px solid #151515;
@@ -1047,11 +1175,10 @@ h4 {
   cursor: pointer;
 }
 .table .body .data {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 0 auto;
   font-size: 11px;
   font-weight: 500;
 }
@@ -1408,12 +1535,14 @@ h4 {
 .pageDetail .accodion .question {
   position: relative;
 }
+.pageDetail .accodion .question + .recomentWrap {
+  display: none;
+}
 .pageDetail .accodion .question .data {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 0 auto;
   font-size: 11px;
   font-weight: 500;
 }
@@ -1539,6 +1668,12 @@ h4 {
   flex: 0 0 80px;
   height: 85px;
   margin: 0;
+}
+.pageDetail .accodion .question.ac .more {
+  display: none;
+}
+.pageDetail .accodion .question.ac + .recomentWrap {
+  display: block;
 }
 .pageDetail .accodion .pagination {
   margin-top: 16px;
@@ -1734,7 +1869,7 @@ h4 {
   padding-left: 27px;
 }
 .pageDetail .accodion .recoment .left {
-  gap: 10px;
+  gap: 10px !important;
 }
 .pageDetail .accodion .recoment .like {
   font-size: 12px;
@@ -2432,11 +2567,10 @@ h4 {
 }
 
 .talksList .data {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 0 auto;
   font-size: 11px;
   font-weight: 500;
 }
@@ -2499,12 +2633,14 @@ h4 {
 .talksDetail .question {
   position: relative;
 }
+.talksDetail .question + .recomentWrap {
+  display: none;
+}
 .talksDetail .question .data {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 0 auto;
   font-size: 11px;
   font-weight: 500;
 }
@@ -2630,6 +2766,12 @@ h4 {
   flex: 0 0 80px;
   height: 85px;
   margin: 0;
+}
+.talksDetail .question.ac .more {
+  display: none;
+}
+.talksDetail .question.ac + .recomentWrap {
+  display: block;
 }
 .talksDetail .flexBx {
   display: flex;
@@ -2979,11 +3121,10 @@ h4 {
   object-fit: cover;
 }
 .storiesList .data {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 0 auto;
   font-size: 11px;
   font-weight: 500;
 }
@@ -3355,12 +3496,14 @@ h4 {
 .about .accodion .question {
   position: relative;
 }
+.about .accodion .question + .recomentWrap {
+  display: none;
+}
 .about .accodion .question .data {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 0 auto;
   font-size: 11px;
   font-weight: 500;
 }
@@ -3486,6 +3629,12 @@ h4 {
   flex: 0 0 80px;
   height: 85px;
   margin: 0;
+}
+.about .accodion .question.ac .more {
+  display: none;
+}
+.about .accodion .question.ac + .recomentWrap {
+  display: block;
 }
 .about .accodion .pagination {
   margin-top: 16px;
@@ -3681,7 +3830,7 @@ h4 {
   padding-left: 27px;
 }
 .about .accodion .recoment .left {
-  gap: 10px;
+  gap: 10px !important;
 }
 .about .accodion .recoment .like {
   font-size: 12px;
@@ -3839,6 +3988,7 @@ h4 {
   text-align: center;
   padding-top: 195px;
   color: #151515;
+  overflow: hidden;
 }
 .page404 .btn {
   height: 36px;
@@ -4214,54 +4364,6 @@ h4 {
   .inner {
     padding: 0 15px;
   }
-  .mainBanner {
-    display: none;
-  }
-  .mainBannerMobile {
-    position: relative;
-    display: block;
-  }
-  .mainBannerMobile .slick-arrow {
-    display: none !important;
-  }
-  .mainBannerMobile .item {
-    padding-top: 115px;
-    height: 480px;
-    display: flex;
-    align-items: flex-start;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-  .mainBannerMobile .item img {
-    width: 100%;
-  }
-  .mainBannerMobile .slick-dots {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 67px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .mainBannerMobile .slick-dots li.slick-active button {
-    opacity: 1;
-  }
-  .mainBannerMobile .slick-dots li button {
-    display: block;
-    width: 5px;
-    height: 5px;
-    border: 0;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.3;
-    text-indent: -9999px;
-    padding: 0;
-  }
-  .mainBannerMobile .slick-dots li + li {
-    margin-left: 5px;
-  }
   .pick,
 .mainArchive,
 .mainStories {
@@ -4305,19 +4407,19 @@ h4 {
   .pick .col-3 {
     gap: 10px;
     flex-wrap: nowrap;
+    flex-wrap: wrap;
     overflow: auto;
     margin-left: -15px;
     margin-right: -15px;
     padding: 0 15px;
   }
   .pick .col-3 > .item {
-    width: 41%;
-    min-width: 160px;
-    flex: 0 0 auto;
+    width: calc((100% - 10px) / 2);
   }
   .mainArchive .col-4 {
     gap: 10px;
     flex-wrap: nowrap;
+    flex-wrap: wrap;
     overflow: auto;
     margin-left: -15px;
     margin-right: -15px;
@@ -4326,9 +4428,7 @@ h4 {
   .mainArchive .col-4 .item {
     transform: rotate(0) !important;
     margin-top: 0 !important;
-    width: 62.8%;
-    min-width: 245px;
-    flex: 0 0 auto;
+    width: calc((100% - 10px) / 2);
   }
   .mainArchive .col-4 .item .thumbImg {
     margin-bottom: 10px;
@@ -4346,130 +4446,12 @@ h4 {
     line-height: 1.31;
     -webkit-line-clamp: 1;
   }
-  .mainStories .bodyWrap .left,
-.mainStories .bodyWrap .right {
-    display: none;
-  }
-  .mainStories .bodyWrap .mobile {
-    display: block;
-    position: relative;
-    padding-bottom: 0px;
-  }
-  .mainStories .bodyWrap .mobile .masonry {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0 20px;
-  }
-  .mainStories .bodyWrap .mobile .masonry > .item {
-    width: calc((100% - 40px) / 3);
-    height: auto;
-  }
-  .mainStories .bodyWrap .mobile .masonry > .item .imgWrap {
-    width: 100%;
-    height: auto;
-    aspect-ratio: initial;
-    cursor: pointer;
-  }
-  .mainStories .bodyWrap .mobile .masonry > .item .imgWrap img {
-    position: static;
-    display: block;
-    height: auto;
-  }
-  .mainStories .bodyWrap .mobile .masonry {
+  .mainStories .bodyWrap .masonryWrap .masonry {
     grid-template-columns: repeat(2, 1fr);
     gap: 0 10px;
   }
-  .mainStories .bodyWrap .mobile .masonry > .item {
+  .mainStories .bodyWrap .masonryWrap .masonry > .item {
     width: calc((100% - 10px) / 2);
-  }
-  .mainStories .bodyWrap .mobile .masonry {
-    display: block;
-  }
-  .mainStories .bodyWrap .mobile .masonry .item .cate {
-    font-size: 15px;
-    font-weight: 500;
-    color: #f63;
-  }
-  .mainStories .bodyWrap .mobile .masonry .item .name {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.56;
-    margin-top: 10px;
-  }
-  .mainStories .bodyWrap .mobile .masonry .item .textBx {
-    background: #f5f5f5;
-    border: 1px solid #151515;
-    box-sizing: border-box;
-    border-top: 0;
-    padding: 20px;
-    padding-bottom: 50px;
-    position: relative;
-  }
-  .mainStories .bodyWrap .mobile .masonry .item .data {
-    right: 25px;
-    bottom: 22px;
-  }
-  .mainStories .bodyWrap .mobile .masonry > .item {
-    width: calc((100% - 10px) / 2);
-  }
-  .mainStories .bodyWrap .mobile .masonry .textBx {
-    padding: 10px !important;
-  }
-  .mainStories .bodyWrap .mobile .masonry .textBx .cate {
-    font-size: 10px;
-    margin: 0;
-  }
-  .mainStories .bodyWrap .mobile .masonry .textBx .name {
-    font-size: 13px;
-    margin-top: 5px;
-    line-height: 1.31;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    white-space: normal;
-    word-break: break-all;
-  }
-  .mainStories .bodyWrap .mobile .masoryMore {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -60px;
-    width: 100vw;
-    margin-left: -15px;
-    margin-right: -15px;
-    height: 192px;
-    background-image: url(../img/bg_blur.png);
-    background-repeat: repeat;
-    background-size: 1px 100%;
-    text-align: center;
-    padding-top: 74px;
-    box-sizing: border-box;
-  }
-  .mainStories .bodyWrap .mobile .masoryMore .btn {
-    height: 36px;
-    width: 100%;
-    border: 1px solid #f63;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    color: #f63;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .mainStories .bodyWrap .mobile .masoryMore .btn.ac, .mainStories .bodyWrap .mobile .masoryMore .btn:hover {
-    background-color: #f63;
-    color: #fff;
-  }
-  .mainStories .bodyWrap .mobile .masoryMore .moreBtn {
-    font-size: 11px;
-    width: 160px;
-    height: 27px;
-    border-radius: 100px;
-    margin: 0 auto;
   }
   .footer {
     position: relative;
