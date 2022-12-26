@@ -1089,6 +1089,12 @@ h4 {
   display: flex;
   align-items: center;
   margin-bottom: 50px;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.roundTab::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 .roundTab li {
   padding: 8px 20px;
@@ -1098,6 +1104,7 @@ h4 {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 .roundTab li:hover,
 .roundTab li.ac {
@@ -2303,9 +2310,6 @@ h4 {
 .loginForm .inputWrap.mt-10 {
   margin-top: 10px !important;
 }
-.loginForm .inputWrap.mt-50 {
-  margin-top: 50px !important;
-}
 .loginForm .inputWrap .label {
   font-size: 18px;
   font-weight: bold;
@@ -2319,6 +2323,9 @@ h4 {
 }
 .loginForm .inputWrap + .inputWrap {
   margin-top: 16px;
+}
+.loginForm .inputWrap + .inputWrap.mt-50 {
+  margin-top: 50px;
 }
 .loginForm .inputWrap .rightCon {
   display: flex;
@@ -4008,6 +4015,12 @@ h4 {
   background-color: #f63;
   color: #fff;
 }
+.page404.etcError {
+  padding-top: 220px;
+}
+.page404.etcError .logo {
+  max-width: 520px;
+}
 .page404 .logo {
   width: 80%;
   max-width: 349px;
@@ -4031,6 +4044,13 @@ h4 {
   background: url(../img/bg_search.png) center/cover no-repeat;
   transform: translateX(10%);
   z-index: -1;
+}
+.page404 h2 {
+  margin-top: 170px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #151515;
 }
 .page404 p {
   font-size: 18px;
@@ -4138,9 +4158,6 @@ h4 {
 .PageEdit .inputWrap.mt-10 {
   margin-top: 10px !important;
 }
-.PageEdit .inputWrap.mt-50 {
-  margin-top: 50px !important;
-}
 .PageEdit .inputWrap .label {
   font-size: 18px;
   font-weight: bold;
@@ -4154,6 +4171,9 @@ h4 {
 }
 .PageEdit .inputWrap + .inputWrap {
   margin-top: 16px;
+}
+.PageEdit .inputWrap + .inputWrap.mt-50 {
+  margin-top: 50px;
 }
 .PageEdit .inputWrap .rightCon {
   display: flex;
@@ -4364,6 +4384,55 @@ h4 {
   .inner {
     padding: 0 15px;
   }
+  .mainBanner {
+    display: none;
+  }
+  .mainBannerMobile {
+    position: relative;
+    display: block;
+  }
+  .mainBannerMobile .slick-arrow {
+    display: none !important;
+  }
+  .mainBannerMobile .item {
+    aspect-ratio: 390/480;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .mainBannerMobile .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .mainBannerMobile .slick-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 67px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainBannerMobile .slick-dots li.slick-active button {
+    opacity: 1;
+  }
+  .mainBannerMobile .slick-dots li button {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.3;
+    text-indent: -9999px;
+    padding: 0;
+  }
+  .mainBannerMobile .slick-dots li + li {
+    margin-left: 5px;
+  }
   .pick,
 .mainArchive,
 .mainStories {
@@ -4492,9 +4561,23 @@ h4 {
   .storiesList .masonry > .item {
     width: calc((100% - 10px) / 2);
   }
+  .pageTab .inner .ulWrap {
+    border-bottom: 1px solid #151515;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
   .pageTab .inner ul {
     overflow-y: visible;
     overflow-x: auto;
+    border-bottom: 0;
+    width: 100%;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
@@ -4619,10 +4702,21 @@ h4 {
   .section-detail .leftNav .modify {
     margin-bottom: 20px;
   }
+  .section-detail .leftNav .ulWrap {
+    border-bottom: 1px solid #151515;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
+  .section-detail .leftNav .ulWrap {
+    margin-bottom: 40px;
+  }
   .section-detail .leftNav ul {
     margin-top: 45px;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     overflow-x: auto;
     width: 100vw;
     margin-left: -15px;
@@ -4634,13 +4728,32 @@ h4 {
     scrollbar-width: none; /* Firefox */
     overflow-y: visible;
     overflow-x: auto;
-    height: 22px;
+    height: auto;
+    position: relative;
+    margin-bottom: -1px;
   }
   .section-detail .leftNav ul::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
   }
   .section-detail .leftNav ul li {
     flex: 0 0 auto;
+    margin-bottom: 12px !important;
+    position: relative;
+  }
+  .section-detail .leftNav ul li span {
+    display: block;
+    font-size: 14px;
+  }
+  .section-detail .leftNav ul li.ac::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #f63;
   }
   .section-detail .leftNav ul li + li {
     margin: 0;
@@ -4766,6 +4879,10 @@ h4 {
   .pageDetail .control .btn {
     width: 100%;
   }
+  .page404 .search-bg {
+    transform: scale(0.85);
+    margin-top: 20px;
+  }
 }
 @media screen and (max-width: 520px) {
   .section-detail .storyCon.col-3 {
@@ -4791,31 +4908,43 @@ h4 {
     flex-direction: column;
     align-items: flex-start;
   }
+  .loginForm .inputWrap + .inputWrap {
+    margin-top: 30px;
+  }
+  .loginForm .inputWrap + .inputWrap.mt-50 {
+    margin-top: 30px;
+  }
   .loginForm .inputWrap .label {
     flex-basis: 30px;
   }
   .loginForm .inputWrap.mt-10 .label {
     display: none;
   }
-  .loginForm .inputWrap.mt-50 {
-    margin-top: 16px !important;
-  }
   .loginForm.signupForm .readonly {
     padding-left: 0;
-    flex-basis: 38px;
+    flex-basis: 0;
     display: flex;
     align-items: center;
   }
   .loginForm .inputWrap .radioWrap {
     display: flex;
     align-items: center;
-    height: 60px;
   }
   .loginForm .select {
     width: 100%;
   }
+  .page404 p {
+    word-break: keep-all;
+  }
   .page404 .search-bg {
     margin-bottom: -20px;
+  }
+  .page404.etcError {
+    padding-top: 195px;
+  }
+  .page404.etcError h2 {
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 }
 
